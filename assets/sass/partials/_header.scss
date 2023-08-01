@@ -1,0 +1,61 @@
+/*botón mode*/
+.header { 
+    border: solid 1px black;
+    height: 10vh;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    position: relative;
+
+    .mode {
+        cursor: pointer;
+    
+        .circle{
+            width: 45px;
+            height: 45px;
+            background-color: aqua;
+            border-radius: 50%;
+            position: relative;
+
+            .icons {
+                position: absolute;
+                font-size: 2.5em;
+                top:50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+        
+                .uil-moon {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .nav{
+        display:flex;
+        flex-direction: row;
+        gap:2em;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+
+        .links{
+            font-size: 1.8em;
+        
+            &:hover{
+                animation: up-animation 0.5s ease  forwards;
+            }
+        }
+    }
+}
+
+@keyframes up-animation{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-10px);
+    }
+}

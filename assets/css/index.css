@@ -1,56 +1,78 @@
 @charset "UTF-8";
-/*Import ---------------------------------------------------------------------------------------*/
+/*VARIABLES*/
+/*Variables*/
+/*NORMALIZAR*/
+/*Normalizar -------------------------------------------------------------------------------*/
+/*Importar*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-body {
+/*Reiniciar*/
+*,
+*::after,
+*::before {
+  padding: 0;
   margin: 0;
-  width: 100%;
-  min-height: 100vh;
+  box-sizing: border-box; }
+
+/*Globales*/
+html {
+  font-size: 62.5%;
   font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth; }
+
+body {
+  overflow: hidden; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+ul {
+  list-style-type: none;
+  padding-left: 0; }
+
+/*PARTES*/
+/*botón mode*/
+.header {
+  border: solid 1px black;
+  height: 10vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  overflow: hidden;
-  /* Evita que el contenido se desborde al reducir el tamaño de la pantalla */ }
+  padding: 0 2rem;
+  position: relative; }
+  .header .mode {
+    cursor: pointer; }
+    .header .mode .circle {
+      width: 45px;
+      height: 45px;
+      background-color: aqua;
+      border-radius: 50%;
+      position: relative; }
+      .header .mode .circle .icons {
+        position: absolute;
+        font-size: 2.5em;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+        .header .mode .circle .icons .uil-moon {
+          display: none; }
+  .header .nav {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    .header .nav .links {
+      font-size: 1.8em; }
+      .header .nav .links:hover {
+        animation: up-animation 0.5s ease  forwards; }
 
-.iframe-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-  /* Ajusta este valor según el aspect ratio del iframe */ }
-
-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%; }
-
-h1 {
-  position: absolute;
-  top: 30%;
-  font-size: 3.5em;
-  text-align: center;
-  color: #fff;
-  z-index: 1;
-  opacity: 0;
-  animation: fade-in 0.5s ease forwards;
-  animation-delay: 0.6s; }
-
-h2 {
-  position: absolute;
-  top: 37%;
-  font-size: 3.5em;
-  text-align: center;
-  color: #fff;
-  z-index: 1;
-  opacity: 0;
-  animation: fade-in 0.5s ease forwards;
-  animation-delay: 0.7s; }
-
-@keyframes fade-in {
+@keyframes up-animation {
   0% {
-    opacity: 0;
     transform: translateY(0); }
   100% {
-    opacity: 1;
-    transform: translateY(50px); } }
+    transform: translateY(-10px); } }
+
+/*PÁGINAS*/

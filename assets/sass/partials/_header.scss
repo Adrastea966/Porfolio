@@ -1,8 +1,8 @@
-/*botón mode*/
-.header { 
+/*Cabecera -------------------------------------------------------------------------------*/
+.header {
     border: solid 1px black;
     height: 10vh;
-    display:flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
@@ -10,8 +10,8 @@
 
     .mode {
         cursor: pointer;
-    
-        .circle{
+
+        .circle {
             width: 45px;
             height: 45px;
             background-color: aqua;
@@ -21,10 +21,10 @@
             .icons {
                 position: absolute;
                 font-size: 2.5em;
-                top:50%;
+                top: 50%;
                 left: 50%;
-                transform: translate(-50%,-50%);
-        
+                transform: translate(-50%, -50%);
+
                 .uil-moon {
                     display: none;
                 }
@@ -32,30 +32,35 @@
         }
     }
 
-    .nav{
-        display:flex;
+    .nav {
+        display: flex;
         flex-direction: row;
-        gap:2em;
+        gap: 2em;
         position: absolute;
-        top:50%;
+        top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
 
-        .links{
+        .links {
             font-size: 1.8em;
-        
-            &:hover{
-                animation: up-animation 0.5s ease  forwards;
+            position: relative;
+          
+            &::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 0;
+              height: 100%;
+              background-color: transparent;
+              z-index: -1;
+              transition: width 0.4s ease-in-out;
+            }
+          
+            &:hover::before {
+              width: 100%;
+              background-color: rgba(0, 0, 0, 0.2);
             }
         }
-    }
-}
-
-@keyframes up-animation{
-    0%{
-        transform: translateY(0);
-    }
-    100%{
-        transform: translateY(-10px);
     }
 }

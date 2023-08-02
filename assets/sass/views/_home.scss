@@ -1,0 +1,51 @@
+/*Home -------------------------------------------------------------------------------*/
+.main{
+    max-width:150rem;
+    min-height: 100vh;
+    margin: 0 auto;
+    display:flex;
+    align-items: center;
+
+    .descripcion{
+        padding: 0 2rem;
+        
+        h1{
+            font-size: 8em;
+        }
+
+        h2{
+            font-size: 4em;
+            font-weight: 400;
+        }
+
+        h3{
+            font-size: 2.5em;
+            font-weight: 400;
+        }
+
+        .botones{
+            display:flex;
+            padding-top: 2rem;
+            gap: 2rem;
+            font-size: 1.8em;
+            
+            .contacto{
+                width: 13rem;
+                height: 5rem;
+                background-color: aqua;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .cv{
+                width: 15rem;
+                height: 5rem;
+                background-color:aquamarine;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}

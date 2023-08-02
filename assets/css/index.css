@@ -20,7 +20,7 @@ html {
   scroll-behavior: smooth; }
 
 body {
-  overflow: hidden; }
+  overflow-x: hidden; }
 
 a {
   text-decoration: none;
@@ -31,7 +31,7 @@ ul {
   padding-left: 0; }
 
 /*PARTES*/
-/*botón mode*/
+/*Cabecera -------------------------------------------------------------------------------*/
 .header {
   border: solid 1px black;
   height: 10vh;
@@ -65,14 +65,69 @@ ul {
     left: 50%;
     transform: translate(-50%, -50%); }
     .header .nav .links {
-      font-size: 1.8em; }
-      .header .nav .links:hover {
-        animation: up-animation 0.5s ease  forwards; }
+      font-size: 1.8em;
+      position: relative; }
+      .header .nav .links::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: transparent;
+        z-index: -1;
+        transition: width 0.4s ease-in-out; }
+      .header .nav .links:hover::before {
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.2); }
 
-@keyframes up-animation {
-  0% {
-    transform: translateY(0); }
-  100% {
-    transform: translateY(-10px); } }
+/*Footer -------------------------------------------------------------------------------*/
+.footer {
+  width: 100%;
+  height: 10vh;
+  border: solid 1px black;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .footer .copy {
+    font-size: 1.5em;
+    display: flex;
+    gap: 2rem; }
 
 /*PÁGINAS*/
+/*Home -------------------------------------------------------------------------------*/
+.main {
+  max-width: 150rem;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center; }
+  .main .descripcion {
+    padding: 0 2rem; }
+    .main .descripcion h1 {
+      font-size: 8em; }
+    .main .descripcion h2 {
+      font-size: 4em;
+      font-weight: 400; }
+    .main .descripcion h3 {
+      font-size: 2.5em;
+      font-weight: 400; }
+    .main .descripcion .botones {
+      display: flex;
+      padding-top: 2rem;
+      gap: 2rem;
+      font-size: 1.8em; }
+      .main .descripcion .botones .contacto {
+        width: 13rem;
+        height: 5rem;
+        background-color: aqua;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+      .main .descripcion .botones .cv {
+        width: 15rem;
+        height: 5rem;
+        background-color: aquamarine;
+        display: flex;
+        justify-content: center;
+        align-items: center; }

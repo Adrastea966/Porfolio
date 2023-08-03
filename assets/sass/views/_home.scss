@@ -1,51 +1,214 @@
 /*Home -------------------------------------------------------------------------------*/
-.main{
-    max-width:150rem;
+.main {
+    max-width: 150rem;
     min-height: 100vh;
     margin: 0 auto;
-    display:flex;
+    display: flex;
+    justify-content: space-evenly;
     align-items: center;
 
-    .descripcion{
+    .descripcion {
         padding: 0 2rem;
-        
-        h1{
-            font-size: 8em;
+        position: relative;
+
+        .gato-cuerpo{
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: -4%;
+            left: 5%;
+            animation: avanzar 8s infinite;
+
+            &::before{
+                content: '';
+                position: absolute;
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background-color: $gris-oscuro;
+                top: 18px;
+                left: 7px;
+            }
+
+            &::after{
+                content: '';
+                position: absolute;
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background-color: $gris-oscuro;
+                top: 18px;
+                right: 7px;
+            }
         }
 
-        h2{
+        h1 {
+            font-size: 6em;
+            color: $violeta;
+            opacity: 0;
+            animation: fade-in 1s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        h2 {
             font-size: 4em;
             font-weight: 400;
+            color: $blanco-claro;
+            opacity: 0;
+            animation: fade-in 1s ease forwards;
+            animation-delay: 0.3s;
         }
 
-        h3{
+        h3 {
             font-size: 2.5em;
             font-weight: 400;
+            color: $blanco-claro;
+            opacity: 0;
+            animation: fade-in 1s ease forwards;
+            animation-delay: 0.4s;
         }
 
-        .botones{
-            display:flex;
-            padding-top: 2rem;
+        .botones {
+            display: flex;
             gap: 2rem;
-            font-size: 1.8em;
-            
-            .contacto{
+            padding-top: 2rem;
+            opacity: 0;
+            animation: fade-in 1s ease forwards;
+            animation-delay: 0.5s;
+
+            .contacto {
                 width: 13rem;
                 height: 5rem;
-                background-color: aqua;
-                display:flex;
+                display: flex;
                 justify-content: center;
                 align-items: center;
+                cursor: pointer;
+                position: relative;
+                border: none;
+                transition: .4s ease-in-out;
+                font-size: 1.8em;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    background-color: $violeta;
+                    z-index: -1;
+                    transition: .4s ease-in-out;
+                }
+
+                &:hover {
+                    top: -5px;
+                    left: -5px;
+                }
+
+                &:hover::before {
+                    top: 5px;
+                    left: 5px;
+                }
             }
 
-            .cv{
-                width: 15rem;
+
+            .cv {
+                position: relative;
+                display: block;
+                width: 13rem;
                 height: 5rem;
-                background-color:aquamarine;
-                display:flex;
-                justify-content: center;
-                align-items: center;
+                background-color: transparent;
+                color: $blanco-claro;
+                font-size: 1.8em;
+                overflow: hidden;
+                transition: all 500ms ease;
+                border: 2px solid $violeta;
+                z-index: 0;
+                cursor: pointer;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    margin: auto;
+                    background-color: $violeta;
+                    transition: all 500ms ease;
+                    z-index: -1;
+                }
+
+                &::before {
+                    width: 0;
+                    height: 100%;
+                }
+
+                &:hover {
+                    color: $gris-oscuro;
+
+                    &::before {
+                        width: 100%;
+                    }
+                }
             }
         }
+    }
+
+    .code {
+        img {
+            width: 50rem;
+            height: 50rem;
+        }
+    }
+
+    .degrade {
+        position: absolute;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        filter: blur(70px);
+        -webkit-filter: blur(70px);
+    }
+
+    .deg1 {
+        background-color: $violeta;
+        top: 50%;
+        right: 40%;
+    }
+
+    .deg2 {
+        background-color: $verde;
+        top: 30%;
+        right: 10%;
+    }
+}
+
+/*Keyframes*/
+/*Texto*/
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*Gato*/
+@keyframes avanzar {
+    0% {
+        left: 5%; // Estado inicial
+    }
+    50% {
+        left: 50%; // Llegar al destino
+    }
+    50.01% {
+        left: 50%; // Pausa al llegar al destino
+    }
+    100% {
+        left: 5%; // Volver al estado inicial
     }
 }

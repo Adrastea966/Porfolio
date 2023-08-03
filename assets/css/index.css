@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /*VARIABLES*/
-/*Variables*/
+/*Varibables -------------------------------------------------------------------------------*/
+/*Colores*/
 /*NORMALIZAR*/
 /*Normalizar -------------------------------------------------------------------------------*/
 /*Importar*/
@@ -20,7 +21,9 @@ html {
   scroll-behavior: smooth; }
 
 body {
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  background-color: #151515;
+  position: relative; }
 
 a {
   text-decoration: none;
@@ -33,19 +36,26 @@ ul {
 /*PARTES*/
 /*Cabecera -------------------------------------------------------------------------------*/
 .header {
-  border: solid 1px black;
   height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
-  position: relative; }
+  position: relative;
+  /*Logo*/
+  /*Modo claro/oscuro*/
+  /*Navbar*/ }
+  .header .logo {
+    cursor: pointer; }
+    .header .logo img {
+      width: 5rem;
+      height: 5rem; }
   .header .mode {
     cursor: pointer; }
     .header .mode .circle {
       width: 45px;
       height: 45px;
-      background-color: aqua;
+      background-color: #ededed;
       border-radius: 50%;
       position: relative; }
       .header .mode .circle .icons {
@@ -59,14 +69,18 @@ ul {
   .header .nav {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 2em;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%);
+    /*Links*/ }
     .header .nav .links {
       font-size: 1.8em;
-      position: relative; }
+      position: relative;
+      color: #ededed;
+      transition: 0.3s ease-in-out; }
       .header .nav .links::before {
         content: '';
         position: absolute;
@@ -79,16 +93,18 @@ ul {
         transition: width 0.4s ease-in-out; }
       .header .nav .links:hover::before {
         width: 100%;
-        background-color: rgba(0, 0, 0, 0.2); }
+        background-color: #cd94ff; }
+      .header .nav .links:hover {
+        color: #151515; }
 
 /*Footer -------------------------------------------------------------------------------*/
 .footer {
   width: 100%;
   height: 10vh;
-  border: solid 1px black;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  color: #ededed; }
   .footer .copy {
     font-size: 1.5em;
     display: flex;
@@ -101,33 +117,156 @@ ul {
   min-height: 100vh;
   margin: 0 auto;
   display: flex;
+  justify-content: space-evenly;
   align-items: center; }
   .main .descripcion {
-    padding: 0 2rem; }
+    padding: 0 2rem;
+    position: relative; }
+    .main .descripcion .gato-cuerpo {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      top: -4%;
+      left: 5%;
+      animation: avanzar 8s infinite; }
+      .main .descripcion .gato-cuerpo::before {
+        content: '';
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: #151515;
+        top: 18px;
+        left: 7px; }
+      .main .descripcion .gato-cuerpo::after {
+        content: '';
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: #151515;
+        top: 18px;
+        right: 7px; }
     .main .descripcion h1 {
-      font-size: 8em; }
+      font-size: 6em;
+      color: #cd94ff;
+      opacity: 0;
+      animation: fade-in 1s ease forwards;
+      animation-delay: 0.2s; }
     .main .descripcion h2 {
       font-size: 4em;
-      font-weight: 400; }
+      font-weight: 400;
+      color: #ededed;
+      opacity: 0;
+      animation: fade-in 1s ease forwards;
+      animation-delay: 0.3s; }
     .main .descripcion h3 {
       font-size: 2.5em;
-      font-weight: 400; }
+      font-weight: 400;
+      color: #ededed;
+      opacity: 0;
+      animation: fade-in 1s ease forwards;
+      animation-delay: 0.4s; }
     .main .descripcion .botones {
       display: flex;
-      padding-top: 2rem;
       gap: 2rem;
-      font-size: 1.8em; }
+      padding-top: 2rem;
+      opacity: 0;
+      animation: fade-in 1s ease forwards;
+      animation-delay: 0.5s; }
       .main .descripcion .botones .contacto {
         width: 13rem;
         height: 5rem;
-        background-color: aqua;
         display: flex;
         justify-content: center;
-        align-items: center; }
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+        border: none;
+        transition: .4s ease-in-out;
+        font-size: 1.8em; }
+        .main .descripcion .botones .contacto::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          background-color: #cd94ff;
+          z-index: -1;
+          transition: .4s ease-in-out; }
+        .main .descripcion .botones .contacto:hover {
+          top: -5px;
+          left: -5px; }
+        .main .descripcion .botones .contacto:hover::before {
+          top: 5px;
+          left: 5px; }
       .main .descripcion .botones .cv {
-        width: 15rem;
+        position: relative;
+        display: block;
+        width: 13rem;
         height: 5rem;
-        background-color: aquamarine;
-        display: flex;
-        justify-content: center;
-        align-items: center; }
+        background-color: transparent;
+        color: #ededed;
+        font-size: 1.8em;
+        overflow: hidden;
+        transition: all 500ms ease;
+        border: 2px solid #cd94ff;
+        z-index: 0;
+        cursor: pointer; }
+        .main .descripcion .botones .cv::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          margin: auto;
+          background-color: #cd94ff;
+          transition: all 500ms ease;
+          z-index: -1; }
+        .main .descripcion .botones .cv::before {
+          width: 0;
+          height: 100%; }
+        .main .descripcion .botones .cv:hover {
+          color: #151515; }
+          .main .descripcion .botones .cv:hover::before {
+            width: 100%; }
+  .main .code img {
+    width: 50rem;
+    height: 50rem; }
+  .main .degrade {
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    filter: blur(70px);
+    -webkit-filter: blur(70px); }
+  .main .deg1 {
+    background-color: #cd94ff;
+    top: 50%;
+    right: 40%; }
+  .main .deg2 {
+    background-color: #daff3e;
+    top: 30%;
+    right: 10%; }
+
+/*Keyframes*/
+/*Texto*/
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+/*Gato*/
+@keyframes avanzar {
+  0% {
+    left: 5%; }
+  50% {
+    left: 50%; }
+  50.01% {
+    left: 50%; }
+  100% {
+    left: 5%; } }

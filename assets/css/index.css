@@ -23,7 +23,9 @@ html {
 body {
   overflow-x: hidden;
   background-color: #151515;
-  position: relative; }
+  position: relative;
+  width: 100%;
+  min-height: 100vh; }
 
 a {
   text-decoration: none;
@@ -100,7 +102,8 @@ ul {
 /*Footer -------------------------------------------------------------------------------*/
 .footer {
   width: 100%;
-  height: 10vh;
+  padding-top: 5rem;
+  height: 15vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -113,39 +116,38 @@ ul {
 /*PÁGINAS*/
 /*Home -------------------------------------------------------------------------------*/
 .main {
-  max-width: 150rem;
-  min-height: 100vh;
+  max-width: 180rem;
   margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
-  align-items: center; }
+  align-items: center;
+  position: relative;
+  gap: 5rem;
+  padding-top: 2rem; }
   .main .descripcion {
     padding: 0 2rem;
     position: relative; }
-    .main .descripcion .gato-cuerpo {
+    .main .descripcion .mascota {
       position: absolute;
       width: 30px;
       height: 30px;
-      top: -4%;
+      top: -5%;
       left: 5%;
-      animation: avanzar 8s infinite; }
-      .main .descripcion .gato-cuerpo::before {
-        content: '';
+      opacity: 0;
+      animation: fade-in 2s ease forwards;
+      animation-delay: 0.1s;
+      transform-origin: center; }
+      .main .descripcion .mascota .ojo-izquierdo,
+      .main .descripcion .mascota .ojo-derecho {
         position: absolute;
         width: 4px;
         height: 4px;
         border-radius: 50%;
         background-color: #151515;
-        top: 18px;
+        top: 18px; }
+      .main .descripcion .mascota .ojo-izquierdo {
         left: 7px; }
-      .main .descripcion .gato-cuerpo::after {
-        content: '';
-        position: absolute;
-        width: 4px;
-        height: 4px;
-        border-radius: 50%;
-        background-color: #151515;
-        top: 18px;
+      .main .descripcion .mascota .ojo-derecho {
         right: 7px; }
     .main .descripcion h1 {
       font-size: 6em;
@@ -231,9 +233,13 @@ ul {
           color: #151515; }
           .main .descripcion .botones .cv:hover::before {
             width: 100%; }
-  .main .code img {
-    width: 50rem;
-    height: 50rem; }
+  .main .code {
+    opacity: 0;
+    animation: fade-in 2s ease forwards;
+    animation-delay: 0.6s; }
+    .main .code img {
+      width: 50rem;
+      height: 50rem; }
   .main .degrade {
     position: absolute;
     width: 10rem;
@@ -250,6 +256,36 @@ ul {
     top: 30%;
     right: 10%; }
 
+.flecha {
+  color: #ededed;
+  position: absolute;
+  font-size: 2em;
+  top: 80%;
+  right: 5%;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1rem;
+  transition: 0.1s ease-in-out; }
+  .flecha::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background-color: #ededed;
+    transition: width 0.5s ease-in-out;
+    position: absolute;
+    bottom: 0;
+    left: 0; }
+  .flecha:hover::after {
+    width: 100%;
+    background-color: #cd94ff; }
+  .flecha i {
+    transition: 0.5s ease-in-out; }
+  .flecha:hover {
+    color: #cd94ff; }
+  .flecha:hover i {
+    transform: translateX(3px); }
+
 /*Keyframes*/
 /*Texto*/
 @keyframes fade-in {
@@ -260,13 +296,110 @@ ul {
     opacity: 1;
     transform: translateY(0); } }
 
-/*Gato*/
+/*Mascota*/
 @keyframes avanzar {
-  0% {
-    left: 5%; }
-  50% {
-    left: 50%; }
-  50.01% {
-    left: 50%; }
+  0%,
   100% {
-    left: 5%; } }
+    left: 5%;
+    transform: rotate(-360deg); }
+  50% {
+    left: 50%;
+    transform: rotate(360deg); } }
+
+@keyframes mover-ojos {
+  0% {
+    transform: translateY(0); }
+  33% {
+    transform: translateX(3px); }
+  66% {
+    transform: translateX(-3px); }
+  100% {
+    transform: translateY(0); } }
+
+/*Sobre mi -------------------------------------------------------------------------------*/
+.seccion-info {
+  max-width: 180rem;
+  margin: 0 auto;
+  padding: 2.5rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+  align-items: center;
+  position: relative; }
+  .seccion-info .container-sobre-mi {
+    display: flex;
+    gap: 20rem; }
+    .seccion-info .container-sobre-mi .foto {
+      padding-top: 2rem;
+      position: relative; }
+      .seccion-info .container-sobre-mi .foto img {
+        width: 30rem;
+        opacity: 0;
+        animation: fade-in 1s ease forwards;
+        animation-delay: 0.5s; }
+      .seccion-info .container-sobre-mi .foto::before {
+        content: '';
+        position: absolute;
+        width: 30rem;
+        height: 50rem;
+        background-color: #cd94ff;
+        top: 1%;
+        left: -8%;
+        z-index: -1;
+        opacity: 0;
+        animation: fade-in 1s ease forwards;
+        animation-delay: 0.3s; }
+    .seccion-info .container-sobre-mi .info {
+      display: flex;
+      flex-direction: column;
+      color: #ededed;
+      gap: 8rem; }
+      .seccion-info .container-sobre-mi .info .container-datos {
+        display: flex;
+        flex-direction: row;
+        gap: 8rem; }
+        .seccion-info .container-sobre-mi .info .container-datos .datos-personales-1 {
+          display: flex;
+          flex-direction: column;
+          gap: 4rem;
+          opacity: 0;
+          animation: fade-in 1s ease forwards;
+          animation-delay: 0.7s; }
+          .seccion-info .container-sobre-mi .info .container-datos .datos-personales-1 h3 {
+            color: #daff3e;
+            font-size: 2em; }
+          .seccion-info .container-sobre-mi .info .container-datos .datos-personales-1 p {
+            font-size: 1.8em; }
+        .seccion-info .container-sobre-mi .info .container-datos .datos-personales-2 {
+          display: flex;
+          flex-direction: column;
+          gap: 4rem;
+          opacity: 0;
+          animation: fade-in 1s ease forwards;
+          animation-delay: 0.9s; }
+          .seccion-info .container-sobre-mi .info .container-datos .datos-personales-2 h3 {
+            color: #daff3e;
+            font-size: 2em; }
+          .seccion-info .container-sobre-mi .info .container-datos .datos-personales-2 p {
+            font-size: 1.8em; }
+      .seccion-info .container-sobre-mi .info .info-personal {
+        opacity: 0;
+        animation: fade-in 1s ease forwards;
+        animation-delay: 1s; }
+        .seccion-info .container-sobre-mi .info .info-personal h3 {
+          color: #daff3e;
+          font-size: 2em;
+          padding-bottom: 1rem; }
+        .seccion-info .container-sobre-mi .info .info-personal p {
+          width: 50rem;
+          font-size: 1.8em; }
+
+/*Keyframes*/
+/*Texto*/
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }

@@ -1,0 +1,122 @@
+/*Sobre mi -------------------------------------------------------------------------------*/
+.seccion-info {
+    max-width: 180rem;
+    margin: 0 auto;
+    padding: 2.5rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+    align-items: center;
+    position: relative;
+
+    .container-sobre-mi {
+        display: flex;
+        gap: 20rem;
+
+        .foto {
+            padding-top: 2rem;
+            position: relative;
+        
+            img {
+                width: 30rem;
+                opacity: 0;
+                animation: fade-in 1s ease forwards;
+                animation-delay: 0.5s;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 30rem;
+                height: 50rem;
+                background-color: $violeta;
+                top: 1%;
+                left: -8%;
+                z-index: -1;
+                opacity: 0;
+                animation: fade-in 1s ease forwards;
+                animation-delay: 0.3s;
+            }
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            color: $blanco-claro;
+            gap: 8rem;
+
+            .container-datos {
+                display: flex;
+                flex-direction: row;
+                gap: 8rem;
+
+                .datos-personales-1 {
+                    display:flex;
+                    flex-direction: column;
+                    gap:4rem;
+                    opacity: 0;
+                    animation: fade-in 1s ease forwards;
+                    animation-delay: 0.7s;
+
+                    h3 {
+                        color: $verde;
+                        font-size: 2em;
+                    }
+
+                    p {
+                        font-size: 1.8em;
+                    }
+                }
+                
+                .datos-personales-2 {
+                    display:flex;
+                    flex-direction: column;
+                    gap:4rem;
+                    opacity: 0;
+                    animation: fade-in 1s ease forwards;
+                    animation-delay: 0.9s;
+
+                    h3 {
+                        color: $verde;
+                        font-size: 2em;
+                    }
+
+                    p {
+                        font-size: 1.8em;
+                    }
+                }
+            }
+
+            .info-personal {
+                opacity: 0;
+                animation: fade-in 1s ease forwards;
+                animation-delay: 1s;
+
+                h3 {
+                    color: $verde;
+                    font-size: 2em;
+                    padding-bottom: 1rem;
+                }
+
+                p {
+                    width: 50rem;
+                    font-size: 1.8em;
+                }
+            }
+        }
+    }
+}
+
+/*Keyframes*/
+/*Texto*/
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

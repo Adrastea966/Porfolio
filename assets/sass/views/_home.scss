@@ -1,43 +1,44 @@
 /*Home -------------------------------------------------------------------------------*/
 .main {
-    max-width: 150rem;
-    min-height: 100vh;
+    max-width: 180rem;
     margin: 0 auto;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    position: relative;
+    gap: 5rem;
+    padding-top: 2rem;
 
     .descripcion {
         padding: 0 2rem;
         position: relative;
 
-        .gato-cuerpo{
+        .mascota {
             position: absolute;
             width: 30px;
             height: 30px;
-            top: -4%;
+            top: -5%;
             left: 5%;
-            animation: avanzar 8s infinite;
+            opacity: 0;
+            animation: fade-in 2s ease forwards;
+            animation-delay: 0.1s;
+            transform-origin: center;
 
-            &::before{
-                content: '';
+            .ojo-izquierdo,
+            .ojo-derecho {
                 position: absolute;
                 width: 4px;
                 height: 4px;
                 border-radius: 50%;
                 background-color: $gris-oscuro;
                 top: 18px;
+            }
+
+            .ojo-izquierdo {
                 left: 7px;
             }
 
-            &::after{
-                content: '';
-                position: absolute;
-                width: 4px;
-                height: 4px;
-                border-radius: 50%;
-                background-color: $gris-oscuro;
-                top: 18px;
+            .ojo-derecho {
                 right: 7px;
             }
         }
@@ -159,6 +160,10 @@
             width: 50rem;
             height: 50rem;
         }
+
+        opacity: 0;
+        animation: fade-in 2s ease forwards;
+        animation-delay: 0.6s;
     }
 
     .degrade {
@@ -183,6 +188,47 @@
     }
 }
 
+.flecha {
+    color: $blanco-claro;
+    position: absolute;
+    font-size: 2em;
+    top: 80%;
+    right: 5%;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 1rem;
+    transition: 0.1s ease-in-out;
+    
+    &::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 1px;
+        background-color: $blanco-claro;
+        transition: width 0.5s ease-in-out; 
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    &:hover::after {
+        width: 100%;
+        background-color: $violeta;
+    }
+
+    i{
+        transition: 0.5s ease-in-out;
+    }
+
+    &:hover{
+        color: $violeta;
+    }
+
+    &:hover i {
+        transform: translateX(3px);
+    }
+}
+
 /*Keyframes*/
 /*Texto*/
 @keyframes fade-in {
@@ -197,18 +243,35 @@
     }
 }
 
-/*Gato*/
+/*Mascota*/
 @keyframes avanzar {
-    0% {
-        left: 5%; // Estado inicial
-    }
-    50% {
-        left: 50%; // Llegar al destino
-    }
-    50.01% {
-        left: 50%; // Pausa al llegar al destino
-    }
+
+    0%,
     100% {
-        left: 5%; // Volver al estado inicial
+        left: 5%;
+        transform: rotate(-360deg);
+    }
+
+    50% {
+        left: 50%;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes mover-ojos {
+    0% {
+        transform: translateY(0);
+    }
+
+    33% {
+        transform: translateX(3px);
+    }
+
+    66% {
+        transform: translateX(-3px)
+    }
+
+    100% {
+        transform: translateY(0);
     }
 }

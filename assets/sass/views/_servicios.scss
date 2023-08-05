@@ -1,0 +1,80 @@
+.body-servicios{
+    width: 100%;
+    min-height: 100vh;
+
+    .servicios{
+        width: 100%;
+        display:flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap:2rem;
+        padding: 5rem 0 7rem 0;
+
+        .filtros{
+            display:flex;
+            gap: 2rem;
+            opacity: 0;
+            animation: fade-in 1s ease forwards;
+            animation-delay: 0.5s;
+
+            .filtro{
+                width: 15rem;
+                height: 5rem;
+                background-color: $violeta;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.6em;
+                cursor: pointer;
+            }
+        }
+        .tarjetas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5rem;
+            opacity: 0;
+            animation: fade-in 1s ease forwards;
+            animation-delay: 0.8s;
+            position: relative;
+        }
+        
+        .tarjeta {
+            width: 30rem;
+            height: 35rem;
+            background-color: $gris-oscuro;
+            border: 1px solid $blanco-claro;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s ease-in-out;
+        }
+       
+        .deco {
+            width: 30rem;
+            height: 35rem;
+            background-color: $violeta;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        
+        .tarjeta:hover {
+            transform: translate(-5px, -5px);
+        }
+      
+    }
+
+    .raya {
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 2px;
+        background-color: $verde;
+        top: 7%;
+        left: 47.5%;
+        opacity: 0;
+        animation: move 1s ease forwards;
+        animation-delay: 0.3s;
+    }
+}

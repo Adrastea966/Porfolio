@@ -321,7 +321,8 @@ ul {
   min-height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+  position: relative; }
   .body-sobre-mi .seccion-info {
     max-width: 180rem;
     margin: 0 auto;
@@ -553,16 +554,47 @@ ul {
           top: 75%;
           left: 2%;
           transition: transform 0.2s ease-out; }
-
-/*Keyframes*/
-/*Texto*/
-@keyframes fade-in {
-  0% {
+  .body-sobre-mi .raya {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: #daff3e;
+    top: 7%;
+    left: 41.1%;
     opacity: 0;
-    transform: translateY(10px); }
-  100% {
-    opacity: 1;
-    transform: translateY(0); } }
+    animation: move 1s ease forwards;
+    animation-delay: 0.3s; }
+
+.flecha-vuelta {
+  color: #ededed;
+  position: absolute;
+  font-size: 2em;
+  top: 80%;
+  left: 5%;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  transition: 0.1s ease-in-out; }
+  .flecha-vuelta::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background-color: #ededed;
+    transition: width 0.5s ease-in-out;
+    position: absolute;
+    bottom: 0;
+    left: 0; }
+  .flecha-vuelta:hover::after {
+    width: 100%;
+    background-color: #cd94ff; }
+  .flecha-vuelta i {
+    transition: 0.5s ease-in-out; }
+  .flecha-vuelta:hover {
+    color: #cd94ff; }
+  .flecha-vuelta:hover i {
+    transform: translateX(-3px); }
 
 /*Gato asomandose*/
 @keyframes asomar {
@@ -576,3 +608,76 @@ ul {
     top: 20%;
     left: -20%;
     opacity: 1; } }
+
+/*Raya*/
+@keyframes move {
+  0% {
+    opacity: 0;
+    width: 0; }
+  100% {
+    opacity: 1;
+    width: 7rem; } }
+
+.body-servicios {
+  width: 100%;
+  min-height: 100vh; }
+  .body-servicios .servicios {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 5rem 0 7rem 0; }
+    .body-servicios .servicios .filtros {
+      display: flex;
+      gap: 2rem;
+      opacity: 0;
+      animation: fade-in 1s ease forwards;
+      animation-delay: 0.5s; }
+      .body-servicios .servicios .filtros .filtro {
+        width: 15rem;
+        height: 5rem;
+        background-color: #cd94ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.6em;
+        cursor: pointer; }
+    .body-servicios .servicios .tarjetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5rem;
+      opacity: 0;
+      animation: fade-in 1s ease forwards;
+      animation-delay: 0.8s;
+      position: relative; }
+    .body-servicios .servicios .tarjeta {
+      width: 30rem;
+      height: 35rem;
+      background-color: #151515;
+      border: 1px solid #ededed;
+      position: relative;
+      overflow: hidden;
+      transition: 0.3s ease-in-out; }
+    .body-servicios .servicios .deco {
+      width: 30rem;
+      height: 35rem;
+      background-color: #cd94ff;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1; }
+    .body-servicios .servicios .tarjeta:hover {
+      transform: translate(-5px, -5px); }
+  .body-servicios .raya {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: #daff3e;
+    top: 7%;
+    left: 47.5%;
+    opacity: 0;
+    animation: move 1s ease forwards;
+    animation-delay: 0.3s; }

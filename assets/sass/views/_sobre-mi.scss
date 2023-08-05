@@ -6,6 +6,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
 
     .seccion-info {
         max-width: 180rem;
@@ -297,19 +298,59 @@
             }
         }
     }
+
+    .raya {
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 2px;
+        background-color: $verde;
+        top: 7%;
+        left: 41.1%;
+        opacity: 0;
+        animation: move 1s ease forwards;
+        animation-delay: 0.3s;
+    }
 }
 
-/*Keyframes*/
-/*Texto*/
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-        transform: translateY(10px);
+.flecha-vuelta {
+    color: $blanco-claro;
+    position: absolute;
+    font-size: 2em;
+    top: 80%;
+    left: 5%;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    transition: 0.1s ease-in-out;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 1px;
+        background-color: $blanco-claro;
+        transition: width 0.5s ease-in-out;
+        position: absolute;
+        bottom: 0;
+        left: 0;
     }
 
-    100% {
-        opacity: 1;
-        transform: translateY(0);
+    &:hover::after {
+        width: 100%;
+        background-color: $violeta;
+    }
+
+    i {
+        transition: 0.5s ease-in-out;
+    }
+
+    &:hover {
+        color: $violeta;
+    }
+
+    &:hover i {
+        transform: translateX(-3px);
     }
 }
 
@@ -327,5 +368,18 @@
         top: 20%;
         left: -20%;
         opacity: 1;
+    }
+}
+
+/*Raya*/
+@keyframes move {
+    0% {
+        opacity: 0;
+        width: 0;
+    }
+
+    100% {
+        opacity: 1;
+        width: 7rem;
     }
 }

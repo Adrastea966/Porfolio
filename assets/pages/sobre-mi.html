@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre mí</title>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="../css/index.css">
     <script src="../js/index.js"></script>
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 
-<body>
+<body class="body-sobre-mi">
 
     <!--Cabecera-->
     <header class="header" id="header">
@@ -43,12 +43,16 @@
     </header>
     <!--Fin cabecera-->
 
+    <!--Cabecera-->
     <section class="seccion-info">
 
         <div class="container-sobre-mi">
 
             <div class="foto">
-                <img src="../../assets/image/foto.jpg" alt="Imagen mia">
+                <img class="fotografia" src="../../assets/image/foto.jpg" alt="Imagen mia">
+                <img class="gato" src="../../assets/image/gato2.png" alt="imagen de un cuadrado, que funciona como cuerpo del gato">
+                <div class="ojo-izquierdo"></div>
+                <div class="ojo-derecho"></div>
             </div>
 
             <div class="info">
@@ -85,11 +89,21 @@
 
                 </div>
 
-                <div class="info-personal">
-                    <h3>Un poco sobre mí</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequatur soluta, mollitia,
-                        quas dolore ipsam nisi reprehenderit quo quidem repudiandae qui voluptas alias animi fugit
-                        temporibus culpa at, doloribus totam?</p>
+                <div id="herramientas">
+                    <h3>Herramientas que utilizo</h3>
+                    <div class="elemento elemento1"></div>
+                    <div class="elemento elemento2"></div>
+                    <div class="elemento elemento3"></div>
+                    <div class="elemento elemento4"></div>
+                    <div class="elemento elemento5"></div>
+                    <div class="elemento elemento6"></div>
+                    <div class="elemento elemento7"></div>
+                    <div class="elemento elemento8"></div>
+                    <div class="elemento elemento9"></div>
+                    <div class="elemento elemento10"></div>
+                    <div class="elemento elemento11"></div>
+                    <div class="elemento elemento12"></div>
+                    <div class="elemento elemento13"></div>
                 </div>
 
             </div>
@@ -108,6 +122,10 @@
 
     </footer>
     <!--Fin footer-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"
+        integrity="sha512-UXumZrZNiOwnTcZSHLOfcTs0aos2MzBWHXOHOuB0J/R44QB0dwY5JgfbvljXcklVf65Gc4El6RjZ+lnwd2az2g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../js/sobre-mi.js"></script>
 
 </body>
 

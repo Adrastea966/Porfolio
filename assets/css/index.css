@@ -21,11 +21,9 @@ html {
   scroll-behavior: smooth; }
 
 body {
-  overflow-x: hidden;
+  overflow: hidden;
   background-color: #151515;
-  position: relative;
-  width: 100%;
-  min-height: 100vh; }
+  position: relative; }
 
 a {
   text-decoration: none;
@@ -317,82 +315,244 @@ ul {
     transform: translateY(0); } }
 
 /*Sobre mi -------------------------------------------------------------------------------*/
-.seccion-info {
-  max-width: 180rem;
-  margin: 0 auto;
-  padding: 2.5rem 0;
-  display: flex;
-  justify-content: center;
-  gap: 10rem;
-  align-items: center;
-  position: relative; }
-  .seccion-info .container-sobre-mi {
+.body-sobre-mi {
+  background-image: url("../../../assets/image/fondo.png");
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+  .body-sobre-mi .seccion-info {
+    max-width: 180rem;
+    margin: 0 auto;
+    padding: 2.5rem 0;
     display: flex;
-    gap: 20rem; }
-    .seccion-info .container-sobre-mi .foto {
-      padding-top: 2rem;
-      position: relative; }
-      .seccion-info .container-sobre-mi .foto img {
-        width: 30rem;
-        opacity: 0;
-        animation: fade-in 1s ease forwards;
-        animation-delay: 0.5s; }
-      .seccion-info .container-sobre-mi .foto::before {
-        content: '';
-        position: absolute;
-        width: 30rem;
-        height: 50rem;
-        background-color: #cd94ff;
-        top: 1%;
-        left: -8%;
-        z-index: -1;
-        opacity: 0;
-        animation: fade-in 1s ease forwards;
-        animation-delay: 0.3s; }
-    .seccion-info .container-sobre-mi .info {
+    justify-content: center;
+    gap: 10rem;
+    align-items: center; }
+    .body-sobre-mi .seccion-info .container-sobre-mi {
       display: flex;
-      flex-direction: column;
-      color: #ededed;
-      gap: 8rem; }
-      .seccion-info .container-sobre-mi .info .container-datos {
+      gap: 15rem; }
+      .body-sobre-mi .seccion-info .container-sobre-mi .foto {
+        padding-top: 2rem;
+        position: relative; }
+        .body-sobre-mi .seccion-info .container-sobre-mi .foto .fotografia {
+          width: 30rem;
+          opacity: 0;
+          animation: fade-in 1s ease forwards;
+          animation-delay: 0.5s; }
+        .body-sobre-mi .seccion-info .container-sobre-mi .foto .gato {
+          position: absolute;
+          width: 10rem;
+          height: 13rem;
+          z-index: -1;
+          transform: rotate(-45deg);
+          top: 20%;
+          left: 2%;
+          animation: asomar 1s ease forwards;
+          animation-delay: 3s;
+          opacity: 0; }
+        .body-sobre-mi .seccion-info .container-sobre-mi .foto::before {
+          content: '';
+          position: absolute;
+          width: 30rem;
+          height: 50rem;
+          background-color: #cd94ff;
+          top: 1%;
+          left: -8%;
+          z-index: -1;
+          opacity: 0;
+          animation: fade-in 1s ease forwards;
+          animation-delay: 0.3s; }
+      .body-sobre-mi .seccion-info .container-sobre-mi .info {
         display: flex;
-        flex-direction: row;
-        gap: 8rem; }
-        .seccion-info .container-sobre-mi .info .container-datos .datos-personales-1 {
-          display: flex;
-          flex-direction: column;
-          gap: 4rem;
-          opacity: 0;
-          animation: fade-in 1s ease forwards;
-          animation-delay: 0.7s; }
-          .seccion-info .container-sobre-mi .info .container-datos .datos-personales-1 h3 {
-            color: #daff3e;
-            font-size: 2em; }
-          .seccion-info .container-sobre-mi .info .container-datos .datos-personales-1 p {
-            font-size: 1.8em; }
-        .seccion-info .container-sobre-mi .info .container-datos .datos-personales-2 {
-          display: flex;
-          flex-direction: column;
-          gap: 4rem;
-          opacity: 0;
-          animation: fade-in 1s ease forwards;
-          animation-delay: 0.9s; }
-          .seccion-info .container-sobre-mi .info .container-datos .datos-personales-2 h3 {
-            color: #daff3e;
-            font-size: 2em; }
-          .seccion-info .container-sobre-mi .info .container-datos .datos-personales-2 p {
-            font-size: 1.8em; }
-      .seccion-info .container-sobre-mi .info .info-personal {
-        opacity: 0;
-        animation: fade-in 1s ease forwards;
-        animation-delay: 1s; }
-        .seccion-info .container-sobre-mi .info .info-personal h3 {
+        flex-direction: column;
+        color: #ededed;
+        gap: 3rem; }
+        .body-sobre-mi .seccion-info .container-sobre-mi .info h3 {
           color: #daff3e;
-          font-size: 2em;
+          font-size: 1.8em;
           padding-bottom: 1rem; }
-        .seccion-info .container-sobre-mi .info .info-personal p {
-          width: 50rem;
-          font-size: 1.8em; }
+        .body-sobre-mi .seccion-info .container-sobre-mi .info p {
+          font-size: 1.6em; }
+        .body-sobre-mi .seccion-info .container-sobre-mi .info .container-datos {
+          display: flex;
+          flex-direction: row;
+          gap: 6rem; }
+          .body-sobre-mi .seccion-info .container-sobre-mi .info .container-datos .datos-personales-1 {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            opacity: 0;
+            animation: fade-in 1s ease forwards;
+            animation-delay: 0.7s; }
+          .body-sobre-mi .seccion-info .container-sobre-mi .info .container-datos .datos-personales-2 {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            opacity: 0;
+            animation: fade-in 1s ease forwards;
+            animation-delay: 0.9s; }
+        .body-sobre-mi .seccion-info .container-sobre-mi .info .info-personal {
+          opacity: 0;
+          animation: fade-in 1s ease forwards;
+          animation-delay: 1s; }
+          .body-sobre-mi .seccion-info .container-sobre-mi .info .info-personal p {
+            width: 50rem; }
+        .body-sobre-mi .seccion-info .container-sobre-mi .info #herramientas {
+          background-color: transparent;
+          border: 1px solid #ededed;
+          border-radius: 4px;
+          width: 100%;
+          height: 30rem;
+          position: relative; }
+          .body-sobre-mi .seccion-info .container-sobre-mi .info #herramientas h3 {
+            padding: 1rem 0 0 1rem; }
+        .body-sobre-mi .seccion-info .container-sobre-mi .info .elemento {
+          box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.38); }
+        .body-sobre-mi .seccion-info .container-sobre-mi .info .elemento1 {
+          width: 10rem;
+          height: 4rem;
+          border-radius: 8px;
+          background-image: url("../../../assets/image/animejs.png");
+          background-size: cover;
+          background-position: center;
+          position: absolute;
+          top: 15%;
+          left: 2%;
+          transition: transform 0.2s ease-out; }
+        .body-sobre-mi .seccion-info .container-sobre-mi .info .elemento2 {
+          width: 10rem;
+          height: 4rem;
+          border-radius: 8px;
+          background-image: url("../../../assets/image/bootstrap.png");
+          background-size: cover;
+          background-position: center;
+          position: absolute;
+          top: 15%;
+          left: 28%;
+          transition: transform 0.2s ease-out; }
+        .body-sobre-mi .seccion-info .container-sobre-mi .info .elemento3 {
+          width: 10rem;
+          height: 4rem;
+          border-radius: 8px;
+          background-image: url("../../../assets/image/css.png");
+          background-size: cover;
+          background-position: center;
+          position: absolute;
+          top: 15%;
+          left: 54%;
+          transition: transform 0.2s ease-out; }
+        .body-sobre-mi .seccion-info .container-sobre-mi .info .elemento4 {
+          width: 10rem;
+          height: 4rem;
+          border-radius: 8px;
+          background-image: url("../../../assets/image/figma.png");
+          background-size: cover;
+          background-position: center;
+          position: absolute;
+          top: 30%;
+          left: 2%;
+          transition: transform 0.2s ease-out; }
+        .body-sobre-mi .seccion-info .container-sobre-mi .info .elemento5 {
+          width: 10rem;
+          height: 4rem;
+          border-radius: 8px;
+          background-image: url("../../../assets/image/git.png");
+          background-size: cover;
+          background-position: center;
+          position: absolute;
+          top: 30%;
+          left: 28%;
+          transition: transform 0.2s ease-out; }
+        .body-sobre-mi .seccion-info .container-sobre-mi .info .elemento6 {
+          width: 10rem;
+          height: 4rem;
+          border-radius: 8px;
+          background-image: url("../../../assets/image/github.png");
+          background-size: cover;
+          background-position: center;
+          position: absolute;
+          top: 30%;
+          left: 54%;
+          transition: transform 0.2s ease-out; }
+        .body-sobre-mi .seccion-info .container-sobre-mi .info .elemento7 {
+          width: 10rem;
+          height: 4rem;
+          border-radius: 8px;
+          background-image: url("../../../assets/image/html.png");
+          background-size: cover;
+          background-position: center;
+          position: absolute;
+          top: 45%;
+          left: 2%;
+          transition: transform 0.2s ease-out; }
+        .body-sobre-mi .seccion-info .container-sobre-mi .info .elemento8 {
+          width: 10rem;
+          height: 4rem;
+          border-radius: 8px;
+          background-image: url("../../../assets/image/illustrator.png");
+          background-size: cover;
+          background-position: center;
+          position: absolute;
+          top: 45%;
+          left: 28%;
+          transition: transform 0.2s ease-out; }
+        .body-sobre-mi .seccion-info .container-sobre-mi .info .elemento9 {
+          width: 10rem;
+          height: 4rem;
+          border-radius: 8px;
+          background-image: url("../../../assets/image/js.png");
+          background-size: cover;
+          background-position: center;
+          position: absolute;
+          top: 45%;
+          left: 54%;
+          transition: transform 0.2s ease-out; }
+        .body-sobre-mi .seccion-info .container-sobre-mi .info .elemento10 {
+          width: 10rem;
+          height: 4rem;
+          border-radius: 8px;
+          background-image: url("../../../assets/image/photoshop.png");
+          background-size: cover;
+          background-position: center;
+          position: absolute;
+          top: 60%;
+          left: 2%;
+          transition: transform 0.2s ease-out; }
+        .body-sobre-mi .seccion-info .container-sobre-mi .info .elemento11 {
+          width: 10rem;
+          height: 4rem;
+          border-radius: 8px;
+          background-image: url("../../../assets/image/react.png");
+          background-size: cover;
+          background-position: center;
+          position: absolute;
+          top: 60%;
+          left: 28%;
+          transition: transform 0.2s ease-out; }
+        .body-sobre-mi .seccion-info .container-sobre-mi .info .elemento12 {
+          width: 10rem;
+          height: 4rem;
+          border-radius: 8px;
+          background-image: url("../../../assets/image/sass.png");
+          background-size: cover;
+          background-position: center;
+          position: absolute;
+          top: 60%;
+          left: 54%;
+          transition: transform 0.2s ease-out; }
+        .body-sobre-mi .seccion-info .container-sobre-mi .info .elemento13 {
+          width: 10rem;
+          height: 4rem;
+          border-radius: 8px;
+          background-image: url("../../../assets/image/spline.png");
+          background-size: cover;
+          background-position: center;
+          position: absolute;
+          top: 75%;
+          left: 2%;
+          transition: transform 0.2s ease-out; }
 
 /*Keyframes*/
 /*Texto*/
@@ -403,3 +563,16 @@ ul {
   100% {
     opacity: 1;
     transform: translateY(0); } }
+
+/*Gato asomandose*/
+@keyframes asomar {
+  0% {
+    transform: rotate(-45deg);
+    top: 20%;
+    left: 2%;
+    opacity: 0; }
+  100% {
+    transform: rotate(-45deg);
+    top: 20%;
+    left: -20%;
+    opacity: 1; } }

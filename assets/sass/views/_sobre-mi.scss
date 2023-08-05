@@ -1,106 +1,298 @@
 /*Sobre mi -------------------------------------------------------------------------------*/
-.seccion-info {
-    max-width: 180rem;
-    margin: 0 auto;
-    padding: 2.5rem 0;
-    display: flex;
-    justify-content: center;
-    gap: 10rem;
-    align-items: center;
-    position: relative;
+.body-sobre-mi {
+    background-image: url('../../../assets/image/fondo.png');
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
-    .container-sobre-mi {
+    .seccion-info {
+        max-width: 180rem;
+        margin: 0 auto;
+        padding: 2.5rem 0;
         display: flex;
-        gap: 20rem;
+        justify-content: center;
+        gap: 10rem;
+        align-items: center;
 
-        .foto {
-            padding-top: 2rem;
-            position: relative;
-        
-            img {
-                width: 30rem;
-                opacity: 0;
-                animation: fade-in 1s ease forwards;
-                animation-delay: 0.5s;
-            }
-
-            &::before {
-                content: '';
-                position: absolute;
-                width: 30rem;
-                height: 50rem;
-                background-color: $violeta;
-                top: 1%;
-                left: -8%;
-                z-index: -1;
-                opacity: 0;
-                animation: fade-in 1s ease forwards;
-                animation-delay: 0.3s;
-            }
-        }
-
-        .info {
+        .container-sobre-mi {
             display: flex;
-            flex-direction: column;
-            color: $blanco-claro;
-            gap: 8rem;
+            gap: 15rem;
 
-            .container-datos {
-                display: flex;
-                flex-direction: row;
-                gap: 8rem;
+            .foto {
+                padding-top: 2rem;
+                position: relative;
 
-                .datos-personales-1 {
-                    display:flex;
-                    flex-direction: column;
-                    gap:4rem;
+                .fotografia {
+                    width: 30rem;
                     opacity: 0;
                     animation: fade-in 1s ease forwards;
-                    animation-delay: 0.7s;
-
-                    h3 {
-                        color: $verde;
-                        font-size: 2em;
-                    }
-
-                    p {
-                        font-size: 1.8em;
-                    }
+                    animation-delay: 0.5s;
                 }
-                
-                .datos-personales-2 {
-                    display:flex;
-                    flex-direction: column;
-                    gap:4rem;
+
+                .gato {
+                    position: absolute;
+                    width: 10rem;
+                    height: 13rem;
+                    z-index: -1;
+                    transform: rotate(-45deg);
+                    top: 20%;
+                    left: 2%;
+                    animation: asomar 1s ease forwards;
+                    animation-delay: 3s;
+                    opacity: 0;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 30rem;
+                    height: 50rem;
+                    background-color: $violeta;
+                    top: 1%;
+                    left: -8%;
+                    z-index: -1;
                     opacity: 0;
                     animation: fade-in 1s ease forwards;
-                    animation-delay: 0.9s;
-
-                    h3 {
-                        color: $verde;
-                        font-size: 2em;
-                    }
-
-                    p {
-                        font-size: 1.8em;
-                    }
+                    animation-delay: 0.3s;
                 }
             }
 
-            .info-personal {
-                opacity: 0;
-                animation: fade-in 1s ease forwards;
-                animation-delay: 1s;
+            .info {
+                display: flex;
+                flex-direction: column;
+                color: $blanco-claro;
+                gap: 3rem;
 
                 h3 {
                     color: $verde;
-                    font-size: 2em;
+                    font-size: 1.8em;
                     padding-bottom: 1rem;
                 }
 
                 p {
-                    width: 50rem;
-                    font-size: 1.8em;
+                    font-size: 1.6em;
+                }
+
+                .container-datos {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 6rem;
+
+                    .datos-personales-1 {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 4rem;
+                        opacity: 0;
+                        animation: fade-in 1s ease forwards;
+                        animation-delay: 0.7s;
+                    }
+
+                    .datos-personales-2 {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 4rem;
+                        opacity: 0;
+                        animation: fade-in 1s ease forwards;
+                        animation-delay: 0.9s;
+                    }
+                }
+
+                .info-personal {
+                    opacity: 0;
+                    animation: fade-in 1s ease forwards;
+                    animation-delay: 1s;
+
+                    p {
+                        width: 50rem;
+                    }
+                }
+
+                #herramientas {
+                    background-color: transparent;
+                    border: 1px solid $blanco-claro;
+                    border-radius: 4px;
+                    width: 100%;
+                    height: 30rem;
+                    position: relative;
+
+                    h3 {
+                        padding: 1rem 0 0 1rem;
+                    }
+                }
+
+                .elemento {
+                    box-shadow: $sombra;
+                }
+
+                .elemento1 {
+                    width: 10rem;
+                    height: 4rem;
+                    border-radius: 8px;
+                    background-image: url('../../../assets/image/animejs.png');
+                    background-size: cover;
+                    background-position: center;
+                    position: absolute;
+                    top: 15%;
+                    left: 2%;
+                    transition: transform 0.2s ease-out;
+                }
+
+                .elemento2 {
+                    width: 10rem;
+                    height: 4rem;
+                    border-radius: 8px;
+                    background-image: url('../../../assets/image/bootstrap.png');
+                    background-size: cover;
+                    background-position: center;
+                    position: absolute;
+                    top: 15%;
+                    left: 28%;
+                    transition: transform 0.2s ease-out;
+                }
+
+                .elemento3 {
+                    width: 10rem;
+                    height: 4rem;
+                    border-radius: 8px;
+                    background-image: url('../../../assets/image/css.png');
+                    background-size: cover;
+                    background-position: center;
+                    position: absolute;
+                    top: 15%;
+                    left: 54%;
+                    transition: transform 0.2s ease-out;
+                }
+
+                .elemento4 {
+                    width: 10rem;
+                    height: 4rem;
+                    border-radius: 8px;
+                    background-image: url('../../../assets/image/figma.png');
+                    background-size: cover;
+                    background-position: center;
+                    position: absolute;
+                    top: 30%;
+                    left: 2%;
+                    transition: transform 0.2s ease-out;
+                }
+
+                .elemento5 {
+                    width: 10rem;
+                    height: 4rem;
+                    border-radius: 8px;
+                    background-image: url('../../../assets/image/git.png');
+                    background-size: cover;
+                    background-position: center;
+                    position: absolute;
+                    top: 30%;
+                    left: 28%;
+                    transition: transform 0.2s ease-out;
+                }
+
+                .elemento6 {
+                    width: 10rem;
+                    height: 4rem;
+                    border-radius: 8px;
+                    background-image: url('../../../assets/image/github.png');
+                    background-size: cover;
+                    background-position: center;
+                    position: absolute;
+                    top: 30%;
+                    left: 54%;
+                    transition: transform 0.2s ease-out;
+                }
+
+                .elemento7 {
+                    width: 10rem;
+                    height: 4rem;
+                    border-radius: 8px;
+                    background-image: url('../../../assets/image/html.png');
+                    background-size: cover;
+                    background-position: center;
+                    position: absolute;
+                    top: 45%;
+                    left: 2%;
+                    transition: transform 0.2s ease-out;
+                }
+
+                .elemento8 {
+                    width: 10rem;
+                    height: 4rem;
+                    border-radius: 8px;
+                    background-image: url('../../../assets/image/illustrator.png');
+                    background-size: cover;
+                    background-position: center;
+                    position: absolute;
+                    top: 45%;
+                    left: 28%;
+                    transition: transform 0.2s ease-out;
+                }
+
+                .elemento9 {
+                    width: 10rem;
+                    height: 4rem;
+                    border-radius: 8px;
+                    background-image: url('../../../assets/image/js.png');
+                    background-size: cover;
+                    background-position: center;
+                    position: absolute;
+                    top: 45%;
+                    left: 54%;
+                    transition: transform 0.2s ease-out;
+                }
+
+                .elemento10 {
+                    width: 10rem;
+                    height: 4rem;
+                    border-radius: 8px;
+                    background-image: url('../../../assets/image/photoshop.png');
+                    background-size: cover;
+                    background-position: center;
+                    position: absolute;
+                    top: 60%;
+                    left: 2%;
+                    transition: transform 0.2s ease-out;
+                }
+
+                .elemento11 {
+                    width: 10rem;
+                    height: 4rem;
+                    border-radius: 8px;
+                    background-image: url('../../../assets/image/react.png');
+                    background-size: cover;
+                    background-position: center;
+                    position: absolute;
+                    top: 60%;
+                    left: 28%;
+                    transition: transform 0.2s ease-out;
+                }
+
+                .elemento12 {
+                    width: 10rem;
+                    height: 4rem;
+                    border-radius: 8px;
+                    background-image: url('../../../assets/image/sass.png');
+                    background-size: cover;
+                    background-position: center;
+                    position: absolute;
+                    top: 60%;
+                    left: 54%;
+                    transition: transform 0.2s ease-out;
+                }
+
+                .elemento13 {
+                    width: 10rem;
+                    height: 4rem;
+                    border-radius: 8px;
+                    background-image: url('../../../assets/image/spline.png');
+                    background-size: cover;
+                    background-position: center;
+                    position: absolute;
+                    top: 75%;
+                    left: 2%;
+                    transition: transform 0.2s ease-out;
                 }
             }
         }
@@ -118,5 +310,22 @@
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/*Gato asomandose*/
+@keyframes asomar {
+    0% {
+        transform: rotate(-45deg);
+        top: 20%;
+        left: 2%;
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotate(-45deg);
+        top: 20%;
+        left: -20%;
+        opacity: 1;
     }
 }

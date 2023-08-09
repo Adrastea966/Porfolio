@@ -21,9 +21,8 @@ html {
   scroll-behavior: smooth; }
 
 body {
-  overflow: hidden;
-  background-color: #151515;
-  position: relative; }
+  overflow-x: hidden;
+  background-color: #151515; }
 
 a {
   text-decoration: none;
@@ -100,8 +99,7 @@ ul {
 /*Footer -------------------------------------------------------------------------------*/
 .footer {
   width: 100%;
-  padding-top: 5rem;
-  height: 15vh;
+  padding: 5rem 0 2rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -123,7 +121,6 @@ ul {
   gap: 5rem;
   padding-top: 2rem; }
   .main .descripcion {
-    padding: 0 2rem;
     position: relative; }
     .main .descripcion .mascota {
       position: absolute;
@@ -316,9 +313,9 @@ ul {
 
 /*Sobre mi -------------------------------------------------------------------------------*/
 .body-sobre-mi {
-  background-image: url("../../../assets/image/fondo.png");
+  background-image: url("../../assets/image/fondo.png");
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -415,7 +412,7 @@ ul {
           width: 10rem;
           height: 4rem;
           border-radius: 8px;
-          background-image: url("../../../assets/image/animejs.png");
+          background-image: url("../../assets/image/animejs.png");
           background-size: cover;
           background-position: center;
           position: absolute;
@@ -426,7 +423,7 @@ ul {
           width: 10rem;
           height: 4rem;
           border-radius: 8px;
-          background-image: url("../../../assets/image/bootstrap.png");
+          background-image: url("../../assets/image/bootstrap.png");
           background-size: cover;
           background-position: center;
           position: absolute;
@@ -437,7 +434,7 @@ ul {
           width: 10rem;
           height: 4rem;
           border-radius: 8px;
-          background-image: url("../../../assets/image/css.png");
+          background-image: url("../../assets/image/css.png");
           background-size: cover;
           background-position: center;
           position: absolute;
@@ -448,7 +445,7 @@ ul {
           width: 10rem;
           height: 4rem;
           border-radius: 8px;
-          background-image: url("../../../assets/image/figma.png");
+          background-image: url("../../assets/image/figma.png");
           background-size: cover;
           background-position: center;
           position: absolute;
@@ -459,7 +456,7 @@ ul {
           width: 10rem;
           height: 4rem;
           border-radius: 8px;
-          background-image: url("../../../assets/image/git.png");
+          background-image: url("../../assets/image/git.png");
           background-size: cover;
           background-position: center;
           position: absolute;
@@ -470,7 +467,7 @@ ul {
           width: 10rem;
           height: 4rem;
           border-radius: 8px;
-          background-image: url("../../../assets/image/github.png");
+          background-image: url("../../assets/image/github.png");
           background-size: cover;
           background-position: center;
           position: absolute;
@@ -481,7 +478,7 @@ ul {
           width: 10rem;
           height: 4rem;
           border-radius: 8px;
-          background-image: url("../../../assets/image/html.png");
+          background-image: url("../../assets/image/html.png");
           background-size: cover;
           background-position: center;
           position: absolute;
@@ -492,7 +489,7 @@ ul {
           width: 10rem;
           height: 4rem;
           border-radius: 8px;
-          background-image: url("../../../assets/image/illustrator.png");
+          background-image: url("../../assets/image/illustrator.png");
           background-size: cover;
           background-position: center;
           position: absolute;
@@ -503,7 +500,7 @@ ul {
           width: 10rem;
           height: 4rem;
           border-radius: 8px;
-          background-image: url("../../../assets/image/js.png");
+          background-image: url("../../assets/image/js.png");
           background-size: cover;
           background-position: center;
           position: absolute;
@@ -514,7 +511,7 @@ ul {
           width: 10rem;
           height: 4rem;
           border-radius: 8px;
-          background-image: url("../../../assets/image/photoshop.png");
+          background-image: url("../../assets/image/photoshop.png");
           background-size: cover;
           background-position: center;
           position: absolute;
@@ -525,7 +522,7 @@ ul {
           width: 10rem;
           height: 4rem;
           border-radius: 8px;
-          background-image: url("../../../assets/image/react.png");
+          background-image: url("../../assets/image/react.png");
           background-size: cover;
           background-position: center;
           position: absolute;
@@ -536,7 +533,7 @@ ul {
           width: 10rem;
           height: 4rem;
           border-radius: 8px;
-          background-image: url("../../../assets/image/sass.png");
+          background-image: url("../../assets/image/sass.png");
           background-size: cover;
           background-position: center;
           position: absolute;
@@ -547,24 +544,13 @@ ul {
           width: 10rem;
           height: 4rem;
           border-radius: 8px;
-          background-image: url("../../../assets/image/spline.png");
+          background-image: url("../../assets/image/spline.png");
           background-size: cover;
           background-position: center;
           position: absolute;
           top: 75%;
           left: 2%;
           transition: transform 0.2s ease-out; }
-  .body-sobre-mi .raya {
-    position: absolute;
-    content: '';
-    width: 0;
-    height: 2px;
-    background-color: #daff3e;
-    top: 7%;
-    left: 41.1%;
-    opacity: 0;
-    animation: move 1s ease forwards;
-    animation-delay: 0.3s; }
 
 .flecha-vuelta {
   color: #ededed;
@@ -609,75 +595,234 @@ ul {
     left: -20%;
     opacity: 1; } }
 
-/*Raya*/
-@keyframes move {
-  0% {
-    opacity: 0;
-    width: 0; }
-  100% {
-    opacity: 1;
-    width: 7rem; } }
-
-.body-servicios {
-  width: 100%;
-  min-height: 100vh; }
-  .body-servicios .servicios {
-    width: 100%;
+.body-servicios .servicios {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0 0 0;
+  position: relative;
+  width: 100%; }
+  .body-servicios .servicios .tarjetas {
+    max-width: 120rem;
+    height: 50rem;
+    padding-bottom: 7rem;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    padding: 5rem 0 7rem 0; }
-    .body-servicios .servicios .filtros {
-      display: flex;
-      gap: 2rem;
+    justify-content: space-between; }
+    .body-servicios .servicios .tarjetas .tarjeta1 {
       opacity: 0;
       animation: fade-in 1s ease forwards;
       animation-delay: 0.5s; }
-      .body-servicios .servicios .filtros .filtro {
-        width: 15rem;
-        height: 5rem;
-        background-color: #cd94ff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.6em;
-        cursor: pointer; }
-    .body-servicios .servicios .tarjetas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5rem;
+    .body-servicios .servicios .tarjetas .tarjeta2 {
       opacity: 0;
       animation: fade-in 1s ease forwards;
-      animation-delay: 0.8s;
+      animation-delay: 0.6s; }
+    .body-servicios .servicios .tarjetas .tarjeta3 {
+      opacity: 0;
+      animation: fade-in 1s ease forwards;
+      animation-delay: 0.7s; }
+    .body-servicios .servicios .tarjetas .tarjeta6 {
+      margin-right: 0; }
+    .body-servicios .servicios .tarjetas .tarjeta1,
+    .body-servicios .servicios .tarjetas .tarjeta2,
+    .body-servicios .servicios .tarjetas .tarjeta3,
+    .body-servicios .servicios .tarjetas .tarjeta4,
+    .body-servicios .servicios .tarjetas .tarjeta5,
+    .body-servicios .servicios .tarjetas .tarjeta6 {
+      margin-right: 2rem;
+      flex: 0 0 calc(33.33% - 2rem);
       position: relative; }
-    .body-servicios .servicios .tarjeta {
-      width: 30rem;
-      height: 35rem;
-      background-color: #151515;
-      border: 1px solid #ededed;
-      position: relative;
-      overflow: hidden;
-      transition: 0.3s ease-in-out; }
-    .body-servicios .servicios .deco {
-      width: 30rem;
-      height: 35rem;
-      background-color: #cd94ff;
+      .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta,
+      .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta,
+      .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta,
+      .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta,
+      .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta,
+      .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta {
+        width: 100%;
+        height: 40rem;
+        background-color: #151515;
+        border: 1px solid #ededed;
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out;
+        transition: 0.3s ease-in-out;
+        position: relative; }
+        .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta h3,
+        .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta h3,
+        .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta h3,
+        .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta h3,
+        .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta h3,
+        .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta h3 {
+          font-size: 1.8em;
+          color: #cd94ff; }
+        .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta p,
+        .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta p,
+        .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta p,
+        .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta p,
+        .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta p,
+        .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta p {
+          font-size: 1.6em;
+          color: #ededed; }
+        .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta img,
+        .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta img,
+        .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta img,
+        .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta img,
+        .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta img,
+        .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta img {
+          width: 100%;
+          height: 30vh;
+          object-fit: cover; }
+        .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta .tarjeta-bottom,
+        .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta .tarjeta-bottom,
+        .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta .tarjeta-bottom,
+        .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta .tarjeta-bottom,
+        .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta .tarjeta-bottom,
+        .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta .tarjeta-bottom {
+          display: flex;
+          gap: 1rem;
+          flex-direction: column;
+          padding: 1rem; }
+          .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta .tarjeta-bottom .botones-tarjeta,
+          .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta .tarjeta-bottom .botones-tarjeta,
+          .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta .tarjeta-bottom .botones-tarjeta,
+          .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta .tarjeta-bottom .botones-tarjeta,
+          .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta .tarjeta-bottom .botones-tarjeta,
+          .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta .tarjeta-bottom .botones-tarjeta {
+            display: flex;
+            position: absolute;
+            gap: 1rem;
+            font-size: 1.6em;
+            padding: 1rem;
+            bottom: 2%;
+            right: 2%;
+            color: #ededed; }
+            .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta .tarjeta-bottom .botones-tarjeta a,
+            .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta .tarjeta-bottom .botones-tarjeta a,
+            .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta .tarjeta-bottom .botones-tarjeta a,
+            .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta .tarjeta-bottom .botones-tarjeta a,
+            .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta .tarjeta-bottom .botones-tarjeta a,
+            .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta .tarjeta-bottom .botones-tarjeta a {
+              padding: 0.5rem;
+              border: 1px solid #ededed; }
+        .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta:hover,
+        .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta:hover,
+        .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta:hover,
+        .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta:hover,
+        .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta:hover,
+        .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta:hover {
+          background-color: #cd94ff; }
+          .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta:hover h3,
+          .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta:hover p,
+          .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta:hover .botones-tarjeta,
+          .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta:hover h3,
+          .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta:hover p,
+          .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta:hover .botones-tarjeta,
+          .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta:hover h3,
+          .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta:hover p,
+          .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta:hover .botones-tarjeta,
+          .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta:hover h3,
+          .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta:hover p,
+          .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta:hover .botones-tarjeta,
+          .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta:hover h3,
+          .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta:hover p,
+          .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta:hover .botones-tarjeta,
+          .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta:hover h3,
+          .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta:hover p,
+          .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta:hover .botones-tarjeta {
+            color: #151515; }
+            .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta:hover h3 a,
+            .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta:hover p a,
+            .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta:hover .botones-tarjeta a,
+            .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta:hover h3 a,
+            .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta:hover p a,
+            .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta:hover .botones-tarjeta a,
+            .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta:hover h3 a,
+            .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta:hover p a,
+            .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta:hover .botones-tarjeta a,
+            .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta:hover h3 a,
+            .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta:hover p a,
+            .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta:hover .botones-tarjeta a,
+            .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta:hover h3 a,
+            .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta:hover p a,
+            .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta:hover .botones-tarjeta a,
+            .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta:hover h3 a,
+            .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta:hover p a,
+            .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta:hover .botones-tarjeta a {
+              border: 1px solid #151515;
+              transition: 0.3s ease-in-out; }
+              .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta:hover h3 a:hover,
+              .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta:hover p a:hover,
+              .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta:hover .botones-tarjeta a:hover,
+              .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta:hover h3 a:hover,
+              .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta:hover p a:hover,
+              .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta:hover .botones-tarjeta a:hover,
+              .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta:hover h3 a:hover,
+              .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta:hover p a:hover,
+              .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta:hover .botones-tarjeta a:hover,
+              .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta:hover h3 a:hover,
+              .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta:hover p a:hover,
+              .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta:hover .botones-tarjeta a:hover,
+              .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta:hover h3 a:hover,
+              .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta:hover p a:hover,
+              .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta:hover .botones-tarjeta a:hover,
+              .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta:hover h3 a:hover,
+              .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta:hover p a:hover,
+              .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta:hover .botones-tarjeta a:hover {
+                background-color: #151515;
+                color: #ededed; }
+    .body-servicios .servicios .tarjetas .slick-arrow {
+      width: 30px;
+      height: 30px;
+      font-size: 1px;
+      color: transparent;
       position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1; }
-    .body-servicios .servicios .tarjeta:hover {
-      transform: translate(-5px, -5px); }
-  .body-servicios .raya {
+      border: 1px solid #ededed;
+      top: -56px;
+      right: 2%;
+      cursor: pointer; }
+    .body-servicios .servicios .tarjetas .slick-prev {
+      right: 5%;
+      background: url("../../../assets/image/angle-left.svg");
+      background-size: 100%; }
+    .body-servicios .servicios .tarjetas .slick-next {
+      background: url("../../../assets/image/angle-right.svg");
+      background-size: 100%; }
+  .body-servicios .servicios .mascota2 {
     position: absolute;
-    content: '';
-    width: 0;
-    height: 2px;
-    background-color: #daff3e;
-    top: 7%;
-    left: 47.5%;
+    width: 30px;
+    height: 30px;
+    top: 10%;
+    left: 11%;
     opacity: 0;
-    animation: move 1s ease forwards;
-    animation-delay: 0.3s; }
+    animation: mascota-up 2s ease-in-out forwards;
+    animation-delay: 2s;
+    cursor: pointer; }
+    .body-servicios .servicios .mascota2 .ojo-izquierdo,
+    .body-servicios .servicios .mascota2 .ojo-derecho {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: #151515;
+      top: 18px; }
+    .body-servicios .servicios .mascota2 .ojo-izquierdo {
+      left: 7px; }
+    .body-servicios .servicios .mascota2 .ojo-derecho {
+      right: 7px; }
+
+@keyframes mascota-up {
+  0% {
+    top: 10%;
+    opacity: 0; }
+  50% {
+    top: 5%;
+    opacity: 1; }
+  100% {
+    top: 2%;
+    opacity: 1; } }
+
+@keyframes mover-ojos-abajo {
+  0% {
+    transform: translateY(0); }
+  33% {
+    transform: translatey(4px); }
+  100% {
+    transform: translateY(0); } }

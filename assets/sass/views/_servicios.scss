@@ -1,80 +1,205 @@
-.body-servicios{
-    width: 100%;
-    min-height: 100vh;
+.body-servicios {
 
-    .servicios{
-        width: 100%;
-        display:flex;
+    .servicios {
+        display: flex;
         justify-content: center;
-        flex-direction: column;
         align-items: center;
-        gap:2rem;
-        padding: 5rem 0 7rem 0;
+        padding: 5rem 0 0 0;
+        position: relative;
+        width: 100%;
 
-        .filtros{
-            display:flex;
-            gap: 2rem;
-            opacity: 0;
-            animation: fade-in 1s ease forwards;
-            animation-delay: 0.5s;
+        .tarjetas {
+            max-width: 120rem;
+            height: 50rem;
+            padding-bottom: 7rem;
+            display: flex;
+            justify-content: space-between;
 
-            .filtro{
-                width: 15rem;
-                height: 5rem;
-                background-color: $violeta;
-                display:flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 1.6em;
+            .tarjeta1 {
+                opacity: 0;
+                animation: fade-in 1s ease forwards;
+                animation-delay: 0.5s;
+            }
+
+            .tarjeta2 {
+                opacity: 0;
+                animation: fade-in 1s ease forwards;
+                animation-delay: 0.6s;
+            }
+
+            .tarjeta3 {
+                opacity: 0;
+                animation: fade-in 1s ease forwards;
+                animation-delay: 0.7s;
+            }
+
+            .tarjeta6 {
+                margin-right: 0;
+            }
+
+            .tarjeta1,
+            .tarjeta2,
+            .tarjeta3,
+            .tarjeta4,
+            .tarjeta5,
+            .tarjeta6 {
+                margin-right: 2rem;
+                flex: 0 0 calc(33.33% - 2rem);
+                position: relative;
+
+                .tarjeta {
+                    width: 100%;
+                    height: 40rem;
+                    background-color: $gris-oscuro;
+                    border: 1px solid $blanco-claro;
+                    overflow: hidden;
+                    transition: transform 0.3s ease-in-out;
+                    transition: 0.3s ease-in-out;
+                    position: relative;
+                
+                    h3 {
+                        font-size: 1.8em;
+                        color: $violeta;
+                    }
+                
+                    p {
+                        font-size: 1.6em;
+                        color: $blanco-claro;
+                    }
+                
+                    img {
+                        width: 100%;
+                        height: 30vh;
+                        object-fit: cover;
+                    }
+                
+                    .tarjeta-bottom {
+                        display: flex;
+                        gap: 1rem;
+                        flex-direction: column;
+                        padding: 1rem;
+                
+                        .botones-tarjeta {
+                            display: flex;
+                            position: absolute;
+                            gap: 1rem;
+                            font-size: 1.6em;
+                            padding: 1rem;
+                            bottom: 2%;
+                            right: 2%;
+                            color: $blanco-claro;
+                
+                            a {
+                                padding: 0.5rem;
+                                border: 1px solid $blanco-claro;
+                            }
+                        }
+                    }
+                
+                    &:hover {
+                        background-color: $violeta;
+                
+                        h3,
+                        p,
+                        .botones-tarjeta {
+                            color: $gris-oscuro;
+                
+                            a {
+                                border: 1px solid $gris-oscuro;
+                                transition: 0.3s ease-in-out;
+
+                                &:hover{
+                                    background-color: $gris-oscuro;
+                                    color: $blanco-claro;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .slick-arrow {
+                width: 30px;
+                height: 30px;
+                font-size: 1px;
+                color: transparent;
+                position: absolute;
+                border: 1px solid $blanco-claro;
+                top: -56px;
+                right: 2%;
                 cursor: pointer;
             }
+
+            .slick-prev {
+                right: 5%;
+                background: url('../../../assets/image/angle-left.svg');
+                background-size: 100%;
+            }
+
+            .slick-next {
+                background: url('../../../assets/image/angle-right.svg');
+                background-size: 100%;
+            }
         }
-        .tarjetas {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5rem;
-            opacity: 0;
-            animation: fade-in 1s ease forwards;
-            animation-delay: 0.8s;
-            position: relative;
-        }
-        
-        .tarjeta {
-            width: 30rem;
-            height: 35rem;
-            background-color: $gris-oscuro;
-            border: 1px solid $blanco-claro;
-            position: relative;
-            overflow: hidden;
-            transition: 0.3s ease-in-out;
-        }
-       
-        .deco {
-            width: 30rem;
-            height: 35rem;
-            background-color: $violeta;
+
+        .mascota2{
             position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
+            width: 30px;
+            height: 30px;
+            top: 10%;
+            left: 11%;
+            opacity: 0;
+            animation: mascota-up 2s ease-in-out forwards;
+            animation-delay: 2s;
+            cursor: pointer;
+          
+            .ojo-izquierdo,
+            .ojo-derecho {
+                position: absolute;
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background-color: $gris-oscuro;
+                top: 18px;
+            }
+
+            .ojo-izquierdo {
+                left: 7px;
+            }
+
+            .ojo-derecho {
+                right: 7px;
+            }
         }
-        
-        .tarjeta:hover {
-            transform: translate(-5px, -5px);
-        }
-      
+    }
+}
+
+@keyframes mascota-up {
+    0%{
+        top: 10%;
+        opacity: 0;
+    }
+    50%{
+        top: 5%;
+        opacity: 1;
+    }
+    100%{
+        top: 2%;
+        opacity: 1;
+    }
+}
+
+
+@keyframes mover-ojos-abajo {
+    0% {
+        transform: translateY(0);
     }
 
-    .raya {
-        position: absolute;
-        content: '';
-        width: 0;
-        height: 2px;
-        background-color: $verde;
-        top: 7%;
-        left: 47.5%;
-        opacity: 0;
-        animation: move 1s ease forwards;
-        animation-delay: 0.3s;
+    33% {
+        transform: translatey(4px);
+    }
+
+    100% {
+        transform: translateY(0);
     }
 }

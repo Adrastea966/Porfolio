@@ -1,8 +1,8 @@
 /*Sobre mi -------------------------------------------------------------------------------*/
 .body-sobre-mi {
-    background-image: url('../../../assets/image/fondo.png');
+    background-image: url('../../assets/image/fondo.png');
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -131,7 +131,7 @@
                     width: 10rem;
                     height: 4rem;
                     border-radius: 8px;
-                    background-image: url('../../../assets/image/animejs.png');
+                    background-image: url('../../assets/image/animejs.png');
                     background-size: cover;
                     background-position: center;
                     position: absolute;
@@ -144,7 +144,7 @@
                     width: 10rem;
                     height: 4rem;
                     border-radius: 8px;
-                    background-image: url('../../../assets/image/bootstrap.png');
+                    background-image: url('../../assets/image/bootstrap.png');
                     background-size: cover;
                     background-position: center;
                     position: absolute;
@@ -157,7 +157,7 @@
                     width: 10rem;
                     height: 4rem;
                     border-radius: 8px;
-                    background-image: url('../../../assets/image/css.png');
+                    background-image: url('../../assets/image/css.png');
                     background-size: cover;
                     background-position: center;
                     position: absolute;
@@ -170,7 +170,7 @@
                     width: 10rem;
                     height: 4rem;
                     border-radius: 8px;
-                    background-image: url('../../../assets/image/figma.png');
+                    background-image: url('../../assets/image/figma.png');
                     background-size: cover;
                     background-position: center;
                     position: absolute;
@@ -183,7 +183,7 @@
                     width: 10rem;
                     height: 4rem;
                     border-radius: 8px;
-                    background-image: url('../../../assets/image/git.png');
+                    background-image: url('../../assets/image/git.png');
                     background-size: cover;
                     background-position: center;
                     position: absolute;
@@ -196,7 +196,7 @@
                     width: 10rem;
                     height: 4rem;
                     border-radius: 8px;
-                    background-image: url('../../../assets/image/github.png');
+                    background-image: url('../../assets/image/github.png');
                     background-size: cover;
                     background-position: center;
                     position: absolute;
@@ -209,7 +209,7 @@
                     width: 10rem;
                     height: 4rem;
                     border-radius: 8px;
-                    background-image: url('../../../assets/image/html.png');
+                    background-image: url('../../assets/image/html.png');
                     background-size: cover;
                     background-position: center;
                     position: absolute;
@@ -222,7 +222,7 @@
                     width: 10rem;
                     height: 4rem;
                     border-radius: 8px;
-                    background-image: url('../../../assets/image/illustrator.png');
+                    background-image: url('../../assets/image/illustrator.png');
                     background-size: cover;
                     background-position: center;
                     position: absolute;
@@ -235,7 +235,7 @@
                     width: 10rem;
                     height: 4rem;
                     border-radius: 8px;
-                    background-image: url('../../../assets/image/js.png');
+                    background-image: url('../../assets/image/js.png');
                     background-size: cover;
                     background-position: center;
                     position: absolute;
@@ -248,7 +248,7 @@
                     width: 10rem;
                     height: 4rem;
                     border-radius: 8px;
-                    background-image: url('../../../assets/image/photoshop.png');
+                    background-image: url('../../assets/image/photoshop.png');
                     background-size: cover;
                     background-position: center;
                     position: absolute;
@@ -261,7 +261,7 @@
                     width: 10rem;
                     height: 4rem;
                     border-radius: 8px;
-                    background-image: url('../../../assets/image/react.png');
+                    background-image: url('../../assets/image/react.png');
                     background-size: cover;
                     background-position: center;
                     position: absolute;
@@ -274,7 +274,7 @@
                     width: 10rem;
                     height: 4rem;
                     border-radius: 8px;
-                    background-image: url('../../../assets/image/sass.png');
+                    background-image: url('../../assets/image/sass.png');
                     background-size: cover;
                     background-position: center;
                     position: absolute;
@@ -287,7 +287,7 @@
                     width: 10rem;
                     height: 4rem;
                     border-radius: 8px;
-                    background-image: url('../../../assets/image/spline.png');
+                    background-image: url('../../assets/image/spline.png');
                     background-size: cover;
                     background-position: center;
                     position: absolute;
@@ -297,19 +297,6 @@
                 }
             }
         }
-    }
-
-    .raya {
-        position: absolute;
-        content: '';
-        width: 0;
-        height: 2px;
-        background-color: $verde;
-        top: 7%;
-        left: 41.1%;
-        opacity: 0;
-        animation: move 1s ease forwards;
-        animation-delay: 0.3s;
     }
 }
 
@@ -371,15 +358,15 @@
     }
 }
 
-/*Raya*/
-@keyframes move {
-    0% {
-        opacity: 0;
-        width: 0;
-    }
+// /*Raya*/
+// @keyframes move {
+//     0% {
+//         opacity: 0;
+//         width: 0;
+//     }
 
-    100% {
-        opacity: 1;
-        width: 7rem;
-    }
-}
+//     100% {
+//         opacity: 1;
+//         width: 7rem;
+//     }
+// }

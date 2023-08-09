@@ -19,9 +19,8 @@ html {
 }
 
 body {
-    overflow: hidden; 
+    overflow-x: hidden;
     background-color: $gris-oscuro;
-    position: relative;
 }
 
 a {

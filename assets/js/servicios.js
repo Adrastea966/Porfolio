@@ -8,16 +8,16 @@ $(document).ready(function () {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1280,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          infinite: false,
-          dots: true
+          infinite: true,
+          dots: false
         }
       },
       {
-        breakpoint: 600,
+        breakpoint: 1020,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1
@@ -34,145 +34,128 @@ $(document).ready(function () {
   });
 });
 
-//Animacion ojos gato
-function iniciarAnimacion() {
-
-  setTimeout(() => {
-      const ojos = document.querySelectorAll('.ojo-izquierdo, .ojo-derecho');
-      ojos.forEach(ojo => {
-          ojo.style.animation = 'mover-ojos-abajo 3s forwards';
-      });
-  }, 4000); 
-}
-
-setTimeout(iniciarAnimacion);
-
-//Agarrar al gato
-class Circle {
+//Agarrar gato 
+class Heart {
   constructor(element) {
-    this.circle = element;
-    this.container = document.getElementById('servicios');
-    this.isCircleGrabbed = false;
-    this.isCircleReleased = false;
+    this.heart = element;
+    this.container = document.getElementById('contenedor-gato');
+    this.isHeartGrabbed = false;
+    this.isHeartReleased = false;
     this.initialMouseX = 0;
     this.initialMouseY = 0;
-    this.initialCircleX = 0;
-    this.initialCircleY = 0;
+    this.initialHeartX = 0;
+    this.initialHeartY = 0;
     this.speedX = 0;
     this.speedY = 0;
     this.rotation = -45;
     this.gravity = 0.4;
     this.bounceFactor = 0.6;
-    this.isFalling = true;
+    this.isFalling = false;
 
-    const mc = new Hammer.Manager(this.circle);
+    const mc = new Hammer.Manager(this.heart);
     mc.add(new Hammer.Pan({ threshold: 0, pointers: 0 }));
 
-    mc.on('panstart', this.grabCircle.bind(this));
-    mc.on('panmove', this.moveCircle.bind(this));
-    mc.on('panend', this.releaseCircle.bind(this));
-
-    setTimeout(() => {
-      this.isFalling = false;
-      this.speedY = 8 + Math.random() * 5;
-      this.speedX = (Math.random() - 2) * 2;
-      this.animateCircle();
-    }, 4000);
+    mc.on('panstart', this.grabHeart.bind(this));
+    mc.on('panmove', this.moveHeart.bind(this));
+    mc.on('panend', this.releaseHeart.bind(this));
   }
 
-  grabCircle(event) {
-    if (this.isCircleGrabbed) return;
+  grabHeart(event) {
+    if (this.isHeartGrabbed) return;
 
-    this.isCircleGrabbed = true;
+    this.isHeartGrabbed = true;
+    this.isHeartReleased = false; // Reset isHeartReleased
     this.initialMouseX = event.center.x;
     this.initialMouseY = event.center.y;
-    this.initialCircleX = this.circle.offsetLeft;
-    this.initialCircleY = this.circle.offsetTop;
+    this.initialHeartX = this.heart.offsetLeft;
+    this.initialHeartY = this.heart.offsetTop;
     this.rotation = 0;
 
-    this.circle.style.transition = 'none';
-    this.circle.style.animation = '';
+    this.heart.style.transition = 'none';
   }
 
-  releaseCircle(event) {
-    if (!this.isCircleGrabbed) return;
+  releaseHeart(event) {
+    if (!this.isHeartGrabbed) return;
 
-    this.isCircleGrabbed = false;
-    this.isCircleReleased = true;
-    this.circle.style.transition = 'transform 0.2s ease-out';
+    this.isHeartGrabbed = false;
+    this.isHeartReleased = true;
+    this.heart.style.transition = 'transform 0.2s ease-out';
 
-    if (this.isCircleReleased) {
+    if (this.isHeartReleased) {
       this.speedX = (event.center.x - this.initialMouseX) * 0.2;
       this.speedY = (event.center.y - this.initialMouseY) * 0.2;
-      this.isCircleReleased = false;
-      this.animateCircle();
+      this.isHeartReleased = false;
+      this.isFalling = true; // Enable falling physics
+      this.animateHeart();
     }
   }
 
-  moveCircle(event) {
-    if (!this.isCircleGrabbed) return;
+  moveHeart(event) {
+    if (!this.isHeartGrabbed) return;
 
     const moveX = event.center.x - this.initialMouseX;
     const moveY = event.center.y - this.initialMouseY;
 
     const containerWidth = this.container.offsetWidth;
     const containerHeight = this.container.offsetHeight;
-    const circleWidth = this.circle.offsetWidth;
-    const circleHeight = this.circle.offsetHeight;
+    const heartWidth = this.heart.offsetWidth;
+    const heartHeight = this.heart.offsetHeight;
 
-    const maxCircleX = containerWidth - circleWidth;
-    const maxCircleY = containerHeight - circleHeight;
+    const maxHeartX = containerWidth - heartWidth;
+    const maxHeartY = containerHeight - heartHeight;
 
-    let newCircleX = this.initialCircleX + moveX;
-    let newCircleY = this.initialCircleY + moveY;
+    let newHeartX = this.initialHeartX + moveX;
+    let newHeartY = this.initialHeartY + moveY;
 
-    if (newCircleX < 0) {
-      newCircleX = 0;
-    } else if (newCircleX > maxCircleX) {
-      newCircleX = maxCircleX;
+    if (newHeartX < 0) {
+      newHeartX = 0;
+    } else if (newHeartX > maxHeartX) {
+      newHeartX = maxHeartX;
     }
 
-    if (newCircleY < 0) {
-      newCircleY = 0;
-    } else if (newCircleY > maxCircleY) {
-      newCircleY = maxCircleY;
+    if (newHeartY < 0) {
+      newHeartY = 0;
+    } else if (newHeartY > maxHeartY) {
+      newHeartY = maxHeartY;
     }
 
-    this.circle.style.left = `${newCircleX}px`;
-    this.circle.style.top = `${newCircleY}px`;
+    this.heart.style.left = `${newHeartX}px`;
+    this.heart.style.top = `${newHeartY}px`;
 
-    this.rotation = (moveX / containerWidth) * 45; // Cambiar el ángulo de rotación según el movimiento horizontal
-    this.circle.style.transform = `rotate(${this.rotation}deg)`;
+    this.rotation = (moveX / containerWidth) * 45;
+    this.heart.style.transform = `rotate(${this.rotation}deg)`;
   }
 
-  animateCircle() {
+  animateHeart() {
+    if (!this.isFalling) return;
+
     const containerWidth = this.container.offsetWidth;
     const containerHeight = this.container.offsetHeight;
-    const circleWidth = this.circle.offsetWidth;
-    const circleHeight = this.circle.offsetHeight;
+    const heartWidth = this.heart.offsetWidth;
+    const heartHeight = this.heart.offsetHeight;
 
-    const maxCircleX = containerWidth - circleWidth;
-    const maxCircleY = containerHeight - circleHeight;
+    const maxHeartX = containerWidth - heartWidth;
+    const maxHeartY = containerHeight - heartHeight;
 
-    let newCircleX = this.circle.offsetLeft + this.speedX;
-    let newCircleY = this.circle.offsetTop + this.speedY;
+    let newHeartX = this.heart.offsetLeft + this.speedX;
+    let newHeartY = this.heart.offsetTop + this.speedY;
 
-    if (newCircleX < 0) {
-      newCircleX = 0;
+    if (newHeartX < 0) {
+      newHeartX = 0;
       this.speedX *= -this.bounceFactor;
       this.speedY += (Math.random() - 0.5) * 2;
-    } else if (newCircleX > maxCircleX) {
-      newCircleX = maxCircleX;
+    } else if (newHeartX > maxHeartX) {
+      newHeartX = maxHeartX;
       this.speedX *= -this.bounceFactor;
       this.speedY += (Math.random() - 0.5) * 2;
     }
 
-    if (newCircleY < 0) {
-      newCircleY = 0;
+    if (newHeartY < 0) {
+      newHeartY = 0;
       this.speedY *= -this.bounceFactor;
       this.speedX += (Math.random() - 0.5) * 2;
-    } else if (newCircleY > maxCircleY) {
-      newCircleY = maxCircleY;
+    } else if (newHeartY > maxHeartY) {
+      newHeartY = maxHeartY;
       this.speedY *= -this.bounceFactor;
       this.speedX += (Math.random() - 0.5) * 2;
 
@@ -182,22 +165,21 @@ class Circle {
       }
     }
 
-    this.circle.style.left = `${newCircleX}px`;
-    this.circle.style.top = `${newCircleY}px`;
+    this.heart.style.left = `${newHeartX}px`;
+    this.heart.style.top = `${newHeartY}px`;
 
     this.speedY += this.gravity;
 
-    this.rotation += this.speedX; // Cambiar el ángulo de rotación según la velocidad horizontal
-    this.circle.style.transform = `rotate(${this.rotation}deg)`;
+    this.rotation += this.speedX;
+    this.heart.style.transform = `rotate(${this.rotation}deg)`;
 
     if (Math.abs(this.speedX) > 0.5 || Math.abs(this.speedY) > 0.5) {
-      requestAnimationFrame(this.animateCircle.bind(this));
+      requestAnimationFrame(this.animateHeart.bind(this));
     }
   }
 }
 
-const circles = document.getElementsByClassName('gato');
-for (let i = 0; i < circles.length; i++) {
-  new Circle(circles[i]);
+const hearts = document.getElementsByClassName('mascota2');
+for (let i = 0; i < hearts.length; i++) {
+  new Heart(hearts[i]);
 }
-

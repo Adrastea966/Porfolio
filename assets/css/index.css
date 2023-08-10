@@ -41,6 +41,7 @@ ul {
   align-items: center;
   padding: 0 2rem;
   position: relative;
+  z-index: 2;
   /*Logo*/
   /*Modo claro/oscuro*/
   /*Navbar*/ }
@@ -260,7 +261,8 @@ ul {
   display: flex;
   flex-direction: row-reverse;
   gap: 1rem;
-  transition: 0.1s ease-in-out; }
+  transition: 0.1s ease-in-out;
+  z-index: 2; }
   .flecha::after {
     content: '';
     display: block;
@@ -561,7 +563,8 @@ ul {
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  transition: 0.1s ease-in-out; }
+  transition: 0.1s ease-in-out;
+  z-index: 2; }
   .flecha-vuelta::after {
     content: '';
     display: block;
@@ -600,14 +603,19 @@ ul {
   justify-content: center;
   align-items: center;
   padding: 5rem 0 0 0;
-  position: relative;
-  width: 100%; }
+  flex-direction: column;
+  align-items: center;
+  max-width: 150rem; }
   .body-servicios .servicios .tarjetas {
-    max-width: 120rem;
     height: 50rem;
+    max-width: 120rem;
     padding-bottom: 7rem;
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    gap: 4rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1; }
     .body-servicios .servicios .tarjetas .tarjeta1 {
       opacity: 0;
       animation: fade-in 1s ease forwards;
@@ -628,9 +636,8 @@ ul {
     .body-servicios .servicios .tarjetas .tarjeta4,
     .body-servicios .servicios .tarjetas .tarjeta5,
     .body-servicios .servicios .tarjetas .tarjeta6 {
-      margin-right: 2rem;
-      flex: 0 0 calc(33.33% - 2rem);
-      position: relative; }
+      position: relative;
+      margin-right: 2rem; }
       .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta,
       .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta,
       .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta,
@@ -701,73 +708,17 @@ ul {
             .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta .tarjeta-bottom .botones-tarjeta a,
             .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta .tarjeta-bottom .botones-tarjeta a {
               padding: 0.5rem;
-              border: 1px solid #ededed; }
-        .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta:hover,
-        .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta:hover,
-        .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta:hover,
-        .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta:hover,
-        .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta:hover,
-        .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta:hover {
-          background-color: #cd94ff; }
-          .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta:hover h3,
-          .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta:hover p,
-          .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta:hover .botones-tarjeta,
-          .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta:hover h3,
-          .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta:hover p,
-          .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta:hover .botones-tarjeta,
-          .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta:hover h3,
-          .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta:hover p,
-          .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta:hover .botones-tarjeta,
-          .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta:hover h3,
-          .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta:hover p,
-          .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta:hover .botones-tarjeta,
-          .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta:hover h3,
-          .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta:hover p,
-          .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta:hover .botones-tarjeta,
-          .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta:hover h3,
-          .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta:hover p,
-          .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta:hover .botones-tarjeta {
-            color: #151515; }
-            .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta:hover h3 a,
-            .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta:hover p a,
-            .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta:hover .botones-tarjeta a,
-            .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta:hover h3 a,
-            .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta:hover p a,
-            .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta:hover .botones-tarjeta a,
-            .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta:hover h3 a,
-            .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta:hover p a,
-            .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta:hover .botones-tarjeta a,
-            .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta:hover h3 a,
-            .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta:hover p a,
-            .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta:hover .botones-tarjeta a,
-            .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta:hover h3 a,
-            .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta:hover p a,
-            .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta:hover .botones-tarjeta a,
-            .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta:hover h3 a,
-            .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta:hover p a,
-            .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta:hover .botones-tarjeta a {
-              border: 1px solid #151515;
+              border: 1px solid #ededed;
               transition: 0.3s ease-in-out; }
-              .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta:hover h3 a:hover,
-              .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta:hover p a:hover,
-              .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta:hover .botones-tarjeta a:hover,
-              .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta:hover h3 a:hover,
-              .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta:hover p a:hover,
-              .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta:hover .botones-tarjeta a:hover,
-              .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta:hover h3 a:hover,
-              .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta:hover p a:hover,
-              .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta:hover .botones-tarjeta a:hover,
-              .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta:hover h3 a:hover,
-              .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta:hover p a:hover,
-              .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta:hover .botones-tarjeta a:hover,
-              .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta:hover h3 a:hover,
-              .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta:hover p a:hover,
-              .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta:hover .botones-tarjeta a:hover,
-              .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta:hover h3 a:hover,
-              .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta:hover p a:hover,
-              .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta:hover .botones-tarjeta a:hover {
-                background-color: #151515;
-                color: #ededed; }
+              .body-servicios .servicios .tarjetas .tarjeta1 .tarjeta .tarjeta-bottom .botones-tarjeta a:hover,
+              .body-servicios .servicios .tarjetas .tarjeta2 .tarjeta .tarjeta-bottom .botones-tarjeta a:hover,
+              .body-servicios .servicios .tarjetas .tarjeta3 .tarjeta .tarjeta-bottom .botones-tarjeta a:hover,
+              .body-servicios .servicios .tarjetas .tarjeta4 .tarjeta .tarjeta-bottom .botones-tarjeta a:hover,
+              .body-servicios .servicios .tarjetas .tarjeta5 .tarjeta .tarjeta-bottom .botones-tarjeta a:hover,
+              .body-servicios .servicios .tarjetas .tarjeta6 .tarjeta .tarjeta-bottom .botones-tarjeta a:hover {
+                background-color: #cd94ff;
+                border: 1px solid #cd94ff;
+                color: #151515; }
     .body-servicios .servicios .tarjetas .slick-arrow {
       width: 30px;
       height: 30px;
@@ -785,44 +736,55 @@ ul {
     .body-servicios .servicios .tarjetas .slick-next {
       background: url("../../../assets/image/angle-right.svg");
       background-size: 100%; }
-  .body-servicios .servicios .mascota2 {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    top: 10%;
-    left: 11%;
-    opacity: 0;
-    animation: mascota-up 2s ease-in-out forwards;
-    animation-delay: 2s;
-    cursor: pointer; }
-    .body-servicios .servicios .mascota2 .ojo-izquierdo,
-    .body-servicios .servicios .mascota2 .ojo-derecho {
+
+.body-servicios .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 0; }
+  .body-servicios .overlay #contenedor-gato {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 2rem; }
+    .body-servicios .overlay #contenedor-gato .mascota2 {
       position: absolute;
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background-color: #151515;
-      top: 18px; }
-    .body-servicios .servicios .mascota2 .ojo-izquierdo {
-      left: 7px; }
-    .body-servicios .servicios .mascota2 .ojo-derecho {
-      right: 7px; }
+      width: 40px;
+      height: 46px;
+      background-image: url("../../../assets/image/gato2.png");
+      background-size: cover;
+      top: 11%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
 
-@keyframes mascota-up {
-  0% {
-    top: 10%;
-    opacity: 0; }
-  50% {
-    top: 5%;
-    opacity: 1; }
-  100% {
-    top: 2%;
-    opacity: 1; } }
+@media screen and (max-width: 1280px) {
+  .body-servicios .servicios .tarjetas {
+    height: 50rem;
+    max-width: 100rem;
+    padding-bottom: 7rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1; } }
 
-@keyframes mover-ojos-abajo {
-  0% {
-    transform: translateY(0); }
-  33% {
-    transform: translatey(4px); }
-  100% {
-    transform: translateY(0); } }
+@media screen and (max-width: 1280px) {
+  .body-servicios .servicios .tarjetas {
+    max-width: 100rem; } }
+
+@media screen and (max-width: 1020px) {
+  .body-servicios .servicios {
+    padding-bottom: 5rem; }
+    .body-servicios .servicios .tarjetas {
+      max-width: 50rem; }
+      .body-servicios .servicios .tarjetas .slick-prev {
+        right: 10%;
+        background: url("../../../assets/image/angle-left.svg");
+        background-size: 100%; } }

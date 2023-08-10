@@ -731,10 +731,10 @@ ul {
       cursor: pointer; }
     .body-servicios .servicios .tarjetas .slick-prev {
       right: 5%;
-      background: url("../../../assets/image/angle-left.svg");
+      background: url("../../assets/image/angle-left.svg");
       background-size: 100%; }
     .body-servicios .servicios .tarjetas .slick-next {
-      background: url("../../../assets/image/angle-right.svg");
+      background: url("../../assets/image/angle-right.svg");
       background-size: 100%; }
 
 .body-servicios .overlay {
@@ -757,7 +757,7 @@ ul {
       position: absolute;
       width: 40px;
       height: 46px;
-      background-image: url("../../../assets/image/gato2.png");
+      background-image: url("../../assets/image/gato2.png");
       background-size: cover;
       top: 11%;
       left: 50%;
@@ -786,5 +786,4 @@ ul {
       max-width: 50rem; }
       .body-servicios .servicios .tarjetas .slick-prev {
         right: 10%;
-        background: url("../../../assets/image/angle-left.svg");
         background-size: 100%; } }

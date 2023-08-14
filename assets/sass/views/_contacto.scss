@@ -1,0 +1,150 @@
+.body-contacto {
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    position: relative;
+
+    .mascota3 {
+        position: absolute;
+        bottom: -100%;
+        left: 15%;
+        transform: translate(-50%, -50%);
+        animation: fade-in-two 1s ease forwards;
+        animation-delay: 0.6s;
+
+        .gato {
+            content: '';
+            width: 20rem;
+            height: 20rem;
+            background-color: $blanco-claro;
+            position: relative;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-color: transparent;
+            }
+
+            &::before {
+                border-width: 3rem 2rem 0 2rem;
+                border-top-color: $blanco-claro;
+                left: 0;
+                top: -14%;
+                transform: rotate(180deg);
+            }
+
+            &::after {
+                border-width: 3rem 2rem 0 2rem;
+                border-top-color: $blanco-claro;
+                right: 0;
+                top: -14%;
+                transform: rotate(180deg);
+            }
+        }
+
+        .ojo,
+        .ojo2 {
+            position: absolute;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: black;
+            transform: translateX(-50%);
+        }
+
+        .ojo {
+            top: 25%;
+            left: 25%;
+        }
+
+        .ojo2{
+            top: 25%;
+            right: 25%;
+        }
+    }
+
+    .contacto-formulario {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 55rem;
+
+        .form {
+            width: 40%;
+
+            h3 {
+                font-size: 2em;
+                color: $verde;
+            }
+
+            label {
+                display: block;
+                margin-block-start: 1em;
+                margin-block-end: .4em;
+                font-size: 1.6em;
+                color: $blanco-claro;
+            }
+
+            input,
+            textarea {
+                width: 100%;
+                font-size: 1.5em;
+                padding: .5em;
+            }
+
+            input::-webkit-input-placeholder {
+                color: $gris-claro;
+            }
+
+            textarea {
+                margin-block-end: 2em;
+                font-family: inherit;
+            }
+
+            .btn-submit {
+                display: flex;
+                justify-content: flex-end;
+
+                button {
+                    background-color: transparent;
+                    color: $blanco-claro;
+                    font-weight: 600;
+                    font-size: 1.6em;
+                    padding: 10px 20px;
+                    border: solid 2px $blanco-claro;
+                    cursor: pointer;
+                    transition: .3s ease-in-out;
+
+                    &:hover {
+                        background-color: $violeta;
+                        color: $gris-oscuro;
+                        border: solid 2px $gris-oscuro;
+                    }
+                }
+            }
+        }
+
+        #mail-to {
+            opacity: 0;
+        }
+    }
+}
+
+@keyframes fade-in-two {
+    0% {
+        bottom: -100%;
+        left: 22%;
+        transform: translate(-50%, -50%);
+    }
+
+    100% {
+        bottom: -25%;
+        left: 22%;
+        transform: translate(-50%, -50%);
+    }
+}

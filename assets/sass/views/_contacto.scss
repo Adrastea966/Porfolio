@@ -1,7 +1,6 @@
 .body-contacto {
     width: 100%;
     height: 100%;
-    overflow-y: hidden;
     position: relative;
 
     .mascota3 {
@@ -175,8 +174,8 @@
 
         .mascota3 {
             position: absolute;
-            top:50%;
-            left:50%;
+            top:60%;
+            left:32%;
             transform: translate(-50%, -50%);
       
             .gato {
@@ -197,40 +196,68 @@
                 }
     
                 &::before {
-                    border-width: 3rem 2rem 0 2rem;
+                    border-width: 1rem 0.8rem 0 0.8rem;
                     border-top-color: $blanco-claro;
-                    left: 0;
-                    top: -14%;
-                    transform: rotate(180deg);
+                    left: 85%;
+                    top: 1%;
+                    transform: rotate(150deg);
                 }
     
                 &::after {
-                    border-width: 3rem 2rem 0 2rem;
+                    border-width: 1rem 0.8rem 0 0.8rem;
                     border-top-color: $blanco-claro;
-                    right: 0;
-                    top: -14%;
-                    transform: rotate(180deg);
+                    left: 85%;
+                    top: 76%;
+                    transform: rotate(150deg);
                 }
             }
     
             .ojo,
             .ojo2 {
                 position: absolute;
-                width: 1rem;
-                height: 1rem;
+                width: 0.5rem;
+                height: 0.5rem;
                 border-radius: 50%;
                 background-color: black;
                 transform: translateX(-50%);
             }
     
             .ojo {
-                top: 25%;
-                left: 25%;
+                top:10px;
+                left:40px;
             }
     
             .ojo2 {
-                top: 25%;
-                right: 25%;
+                top:30px;
+                left:40px;
+            }
+        }
+    }
+}
+
+/*Pantallas chicas*/
+
+/*500px*/
+@media screen and (max-width:500px) {
+
+    .body-contacto {
+      
+
+        .contacto-formulario {
+            width: 100%;
+            padding-top: 2rem;
+            
+            .form {
+                width: 50%;
+
+                textarea {
+                    height: 15rem;
+                    margin-block-end: 2em;
+                    font-family: inherit;
+                    opacity: 0;
+                    animation: fade-in 1s ease forwards;
+                    animation-delay: 0.7s;
+                }
             }
         }
     }

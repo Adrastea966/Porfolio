@@ -1,16 +1,48 @@
-/*Footer -------------------------------------------------------------------------------*/
-.footer{
+.footer {
     width: 100%;
     padding: 5rem 0 2rem 0;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     color: $blanco-claro;
     background-color: transparent;
 
-    .copy{
+    .copy {
         font-size: 1.5em;
-        display:flex;
+        display: flex;
         gap: 2rem;
     }
+}
+
+/*Media querys*/
+/*500px*/
+@media screen and (max-width:500px) {
+
+    .footer {
+        padding: 10rem 0 2rem 0;
+       
+        .copy {
+            font-size: 1.2em;
+      
+            gap: 1rem;
+        }
+    }
+
+}
+
+/*420px*/
+@media screen and (max-width:420px) {
+
+    .footer {
+        padding: 7rem 0 2rem 0;
+    
+        .copy {
+            font-size: 1.2em;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+    }
+
 }

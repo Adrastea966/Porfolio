@@ -25,10 +25,11 @@
 
     .nav {
         z-index: 4;
-        .cerrar{
-            color:$blanco-claro;
+
+        .cerrar {
+            color: $blanco-claro;
             font-size: 2.5em;
-            display:none;
+            display: none;
         }
 
         .links {
@@ -62,7 +63,6 @@
             }
         }
     }
-
 }
 
 /*Keyframes*/
@@ -78,10 +78,11 @@
     }
 }
 
-/* Pantalla chica */
+/*Pantalla chica*/
+/*670px*/
 @media screen and (max-width: 670px) {
     .header {
-    
+
         .abrir-menu {
             display: block;
             cursor: pointer;
@@ -127,7 +128,7 @@
             width: 250px;
             z-index: 4;
 
-            .links{
+            .links {
                 opacity: 1;
             }
 
@@ -135,5 +136,13 @@
                 opacity: 1;
             }
         }
+    }
+}
+
+/*420px*/
+@media screen and (max-width:420px) {
+
+    .header {
+        padding: 2rem;
     }
 }

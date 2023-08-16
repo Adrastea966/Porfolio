@@ -302,6 +302,8 @@
 }
 
 /*Pantalla chica*/
+
+/*670*/
 @media screen and (max-width:670px) {
 
 
@@ -328,6 +330,123 @@
 
     .flecha {
         z-index: 1;
+    }
+
+}
+
+/*500px*/
+@media screen and (max-width:500px) {
+
+    .main {
+
+        .descripcion {
+
+            .mascota {
+                top: -10%;
+            }
+
+            h1 {
+                font-size: 4em;
+            }
+
+            h2 {
+                font-size: 3em;
+            }
+
+            h3 {
+                font-size: 2em;
+            }
+        }
+
+        .deg1 {
+            top: 70%;
+        }
+    }
+
+    .flecha {
+        font-size: 1.8em;
+    }
+
+    /*Mascota*/
+    @keyframes avanzar {
+
+        0%,
+        100% {
+            left: 5%;
+            transform: rotate(-360deg);
+        }
+
+        50% {
+            left: 40%;
+            transform: rotate(360deg);
+        }
+    }
+}
+
+/*420px*/
+@media screen and (max-width:420px) {
+
+    .main {
+
+        .descripcion {
+
+            h1 {
+                font-size: 3em;
+            }
+
+            h2 {
+                font-size: 2.5em;
+            }
+
+            h3 {
+                font-size: 1.8em;
+                width: 250px;
+            }
+        }
+
+        .deg1 {
+            top: 70%;
+        }
+    }
+
+    /*Mascota*/
+    @keyframes avanzar {
+
+        0%,
+        100% {
+            left: 5%;
+            transform: rotate(-360deg);
+        }
+
+        50% {
+            left: 35%;
+            transform: rotate(360deg);
+        }
+    }
+}
+
+/*280px*/
+@media screen and (max-width:340px) {
+
+    .main {
+
+        .descripcion {
+            padding: 2rem;
+            .botones {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .mascota{
+                top:-2%;
+            }
+        }
+
+        .deg1 {
+            top: 70%;
+        }
     }
 
 }

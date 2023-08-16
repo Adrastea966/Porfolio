@@ -1,4 +1,3 @@
-/*Sobre mi -------------------------------------------------------------------------------*/
 .body-sobre-mi {
     background-image: url('../../assets/image/fondo.png');
     width: 100%;
@@ -359,23 +358,219 @@
 }
 
 /*Mediaquerys*/
+
+/*Pantalla mediana*/
+/*1030px*/
 @media screen and (max-width:1030px) {
 
-.body-sobre-mi {
-    width: 100%;
-    height: 100%;
+    .body-sobre-mi {
+        width: 100%;
+        height: 100%;
 
-    .seccion-info {
-        padding: 5rem 0;
+        .seccion-info {
+            padding: 5rem 0;
 
-        .container-sobre-mi {
-            display: flex;
-            align-items: center;
-            flex-direction: column-reverse;
-            gap: 5rem;
-            justify-content: center;
+            .container-sobre-mi {
+                display: flex;
+                align-items: center;
+                flex-direction: column-reverse;
+                gap: 5rem;
+                justify-content: center;
+            }
         }
+    }
+
+}
+
+/*Pantalla chica*/
+/*420px*/
+@media screen and (max-width:420px) {
+    .body-sobre-mi {
+
+        .seccion-info {
+            gap: 10rem;
+
+            .container-sobre-mi {
+                gap: 5rem;
+
+                .foto {
+
+                    .fotografia {
+                        width: 25rem;
+                    }
+
+                    &::before {
+                        width: 20rem;
+                        height: 30rem;
+                    }
+
+                }
+
+                .info {
+
+                    h3 {
+                        color: $verde;
+                        font-size: 1.5em;
+                    }
+
+                    p {
+                        font-size: 1.2em;
+                    }
+
+                    .elemento2 {
+                        left: 34%;
+                    }
+
+                    .elemento3 {
+                        left: 65%;
+                    }
+
+                    .elemento5 {
+                        left: 34%;
+                    }
+
+                    .elemento6 {
+                        left: 65%;
+                    }
+
+                    .elemento8 {
+                        left: 34%;
+                    }
+
+                    .elemento9 {
+                        left: 65%;
+                    }
+
+                    .elemento11 {
+                        left: 34%;
+                    }
+
+                    .elemento12 {
+                        left: 65%;
+                    }
+
+                }
+            }
+        }
+    }
+
+    .flecha-vuelta {
+        font-size: 1.8em;
     }
 }
 
+/*380px*/
+@media screen and (max-width:380px) {
+    .body-sobre-mi {
+
+        .seccion-info {
+
+            .container-sobre-mi {
+                gap: 5rem;
+
+                .foto {
+
+                    .gato {
+                        display: none;
+                    }
+
+                    .fotografia {
+                        width: 20rem;
+                    }
+
+                    &::before {
+                        left: 10%;
+                    }
+
+                }
+
+                .info {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  
+
+                    .container-datos{
+                        gap:1rem;
+                        padding-left: 3rem;
+                        padding-right: 3rem;
+                    }
+
+                    #herramientas {
+                        width: 25rem;
+                        height: 30rem;
+                    }
+
+                    .elemento1{
+                        width: 8rem;
+                        height: 4rem;
+                    }
+
+                    .elemento2 {
+                        width: 8rem;
+                        height: 4rem;
+                        left: 34%;
+                    }
+
+                    .elemento3 {
+                        width: 8rem;
+                        height: 4rem;
+                        left: 65%;
+                    }
+
+                    .elemento4{
+                        width: 8rem;
+                        height: 4rem;
+                    }
+
+                    .elemento5 {
+                        width: 8rem;
+                        height: 4rem;
+                        left: 34%;
+                    }
+
+                    .elemento6 {
+                        width: 8rem;
+                        height: 4rem;
+                        left: 65%;
+                    }
+
+                    .elemento7{
+                        width: 8rem;
+                        height: 4rem;
+                    }
+
+                    .elemento8 {
+                        width: 8rem;
+                        height: 4rem;
+                        left: 34%;
+                    }
+
+                    .elemento9 {
+                        width: 8rem;
+                        height: 4rem;
+                        left: 65%;
+                    }
+
+                    .elemento10{
+                        width: 8rem;
+                        height: 4rem;
+                    }
+
+                    .elemento11 {
+                        width: 8rem;
+                        height: 4rem;
+                        left: 34%;
+                    }
+
+                    .elemento12 {
+                        width: 8rem;
+                        height: 4rem;
+                        left: 65%;
+                    }
+
+                }
+            }
+        }
+    }
 }

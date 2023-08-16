@@ -1,5 +1,5 @@
 .body-servicios {
-    
+
     .servicios {
         display: flex;
         justify-content: center;
@@ -165,11 +165,16 @@
     }
 }
 
+/*Media querys*/
+
+/*Pantallas grandes*/
+
+/*1280px*/
 @media screen and (max-width:1280px) {
     .body-servicios {
 
         .servicios {
-        
+
             .tarjetas {
                 height: 50rem;
                 max-width: 100rem;
@@ -185,24 +190,13 @@
     }
 }
 
-@media screen and (max-width:1280px) {
-    .body-servicios {
-
-        .servicios {
-        
-            .tarjetas {
-                max-width: 100rem;
-            }
-        }
-    }
-}
-
+/*1020px*/
 @media screen and (max-width:1020px) {
     .body-servicios {
 
         .servicios {
             padding-bottom: 5rem;
-        
+
             .tarjetas {
                 max-width: 50rem;
 
@@ -212,5 +206,69 @@
                 }
             }
         }
+    }
+}
+
+/*Pantallas chicas*/
+
+/*500px*/
+@media screen and (max-width:500px) {
+    .body-servicios {
+
+        .servicios {
+            padding-bottom: 5rem;
+
+            .tarjetas {
+                max-width: 30rem;
+
+                .tarjeta1,
+                .tarjeta2,
+                .tarjeta3,
+                .tarjeta4,
+                .tarjeta5,
+                .tarjeta6 {
+            
+                    .tarjeta {
+                        height: 45rem;
+                    }
+                }
+                
+                .slick-prev {
+                    right: 15%;
+                    background-size: 100%;
+                }
+            }
+        }    
+    }
+}
+
+/*370px*/
+@media screen and (max-width:370px) {
+    .body-servicios {
+
+        .servicios {
+            padding-bottom: 5rem;
+
+            .tarjetas {
+                max-width: 25rem;
+
+                .tarjeta1,
+                .tarjeta2,
+                .tarjeta3,
+                .tarjeta4,
+                .tarjeta5,
+                .tarjeta6 {
+            
+                    .tarjeta {
+                        height: 47rem;
+                    }
+                }
+                
+                .slick-prev {
+                    right: 15%;
+                    background-size: 100%;
+                }
+            }
+        }    
     }
 }

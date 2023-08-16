@@ -33,7 +33,6 @@ ul {
   padding-left: 0; }
 
 /*PARTES*/
-/*Cabecera -------------------------------------------------------------------------------*/
 .header {
   display: flex;
   justify-content: space-between;
@@ -103,7 +102,7 @@ ul {
     top: 0;
     right: 0;
     bottom: 0;
-    background-color: #4f4f4f;
+    background-color: #151515;
     z-index: 4;
     box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
     visibility: hidden;
@@ -1267,9 +1266,10 @@ ul {
 @media screen and (max-width: 500px) {
   .body-contacto .contacto-formulario {
     width: 100%;
-    padding-top: 2rem; }
+    padding-top: 2rem;
+    padding-left: 5rem; }
     .body-contacto .contacto-formulario .form {
-      width: 50%; }
+      width: 60%; }
       .body-contacto .contacto-formulario .form textarea {
         height: 15rem;
         margin-block-end: 2em;

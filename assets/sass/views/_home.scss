@@ -1,6 +1,5 @@
 /*Home -------------------------------------------------------------------------------*/
 .main {
-    max-width: 180rem;
     margin: 0 auto;
     display: flex;
     justify-content: space-evenly;
@@ -191,21 +190,20 @@
     color: $blanco-claro;
     position: absolute;
     font-size: 2em;
-    top: 80%;
     right: 5%;
     display: flex;
     flex-direction: row-reverse;
     gap: 1rem;
     transition: 0.1s ease-in-out;
     z-index: 2;
-    
+
     &::after {
         content: '';
         display: block;
         width: 0;
         height: 1px;
         background-color: $blanco-claro;
-        transition: width 0.5s ease-in-out; 
+        transition: width 0.5s ease-in-out;
         position: absolute;
         bottom: 0;
         left: 0;
@@ -216,11 +214,11 @@
         background-color: $violeta;
     }
 
-    i{
+    i {
         transition: 0.5s ease-in-out;
     }
 
-    &:hover{
+    &:hover {
         color: $violeta;
     }
 
@@ -274,4 +272,62 @@
     100% {
         transform: translateY(0);
     }
+}
+
+/*Mediaquerys*/
+
+/*Pantalla grande - mediana*/
+@media screen and (max-width:1030px) {
+
+    .main {
+        display: flex;
+        position: relative;
+        min-height: 70vh;
+
+        .code {
+            display: none;
+        }
+
+        .deg1 {
+            top: 80%;
+            left: 20%;
+        }
+
+        .deg2 {
+            top: 30%;
+            right: 10%;
+        }
+    }
+
+}
+
+/*Pantalla chica*/
+@media screen and (max-width:670px) {
+
+
+    .main {
+        display: flex;
+        position: relative;
+        min-height: 70vh;
+
+        .code {
+            display: none;
+        }
+
+        .deg1 {
+            top: 80%;
+            left: 20%;
+        }
+
+        .deg2 {
+            top: 30%;
+            right: 10%;
+        }
+
+    }
+
+    .flecha {
+        z-index: 1;
+    }
+
 }

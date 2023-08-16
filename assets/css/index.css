@@ -35,67 +35,101 @@ ul {
 /*PARTES*/
 /*Cabecera -------------------------------------------------------------------------------*/
 .header {
-  height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
-  position: relative;
-  z-index: 2;
-  /*Logo*/
-  /*Modo claro/oscuro*/
-  /*Navbar*/ }
+  padding: 2rem 5rem 2rem 5rem;
+  z-index: 4;
+  height: 10vh; }
   .header .logo {
-    cursor: pointer; }
+    cursor: pointer;
+    z-index: 4; }
     .header .logo img {
       width: 5rem;
       height: 5rem; }
-  .header .mode {
-    cursor: pointer; }
-    .header .mode .circle {
-      width: 45px;
-      height: 45px;
-      background-color: #ededed;
-      border-radius: 50%;
-      position: relative; }
-      .header .mode .circle .icons {
-        position: absolute;
-        font-size: 2.5em;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%); }
-        .header .mode .circle .icons .uil-moon {
-          display: none; }
+  .header .abrir-menu {
+    font-size: 2.5em;
+    color: #ededed;
+    display: none; }
   .header .nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 2em;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /*Links*/ }
+    z-index: 4; }
+    .header .nav .cerrar {
+      color: #ededed;
+      font-size: 2.5em;
+      display: none; }
     .header .nav .links {
       font-size: 1.8em;
-      position: relative;
       color: #ededed;
-      transition: 0.3s ease-in-out; }
+      transition: color 0.3s ease-in-out;
+      position: relative;
+      margin: 20px; }
       .header .nav .links::before {
         content: '';
         position: absolute;
-        top: 0;
-        left: 0;
         width: 0;
         height: 100%;
-        background-color: transparent;
-        z-index: -1;
-        transition: width 0.4s ease-in-out; }
-      .header .nav .links:hover::before {
-        width: 100%;
-        background-color: #cd94ff; }
+        top: 0;
+        background-color: #cd94ff;
+        transition: width 0.3s ease-in-out;
+        z-index: -1; }
+      .header .nav .links::before {
+        left: 0; }
       .header .nav .links:hover {
         color: #151515; }
+        .header .nav .links:hover::before {
+          width: 100%; }
+
+/*Keyframes*/
+@keyframes hover {
+  0% {
+    width: 0;
+    background-color: transparent; }
+  100% {
+    width: 100%;
+    background-color: #cd94ff; } }
+
+/* Pantalla chica */
+@media screen and (max-width: 670px) {
+  .header .abrir-menu {
+    display: block;
+    cursor: pointer;
+    z-index: 4; }
+  .header .nav {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #4f4f4f;
+    z-index: 4;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    width: 0;
+    transition: .5s ease-in-out; }
+    .header .nav .cerrar {
+      display: block;
+      padding-bottom: 10rem;
+      cursor: pointer;
+      padding: 2rem 2rem 10rem 0;
+      opacity: 0;
+      transition: .3s ease-in-out; }
+    .header .nav .links {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-right: 2rem;
+      opacity: 0;
+      transition: .3s ease-in-out; }
+  .header .visible {
+    visibility: visible;
+    width: 250px;
+    z-index: 4; }
+    .header .visible .links {
+      opacity: 1; }
+    .header .visible .cerrar {
+      opacity: 1; } }
 
 /*Footer -------------------------------------------------------------------------------*/
 .footer {
@@ -104,7 +138,8 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ededed; }
+  color: #ededed;
+  background-color: transparent; }
   .footer .copy {
     font-size: 1.5em;
     display: flex;
@@ -113,7 +148,6 @@ ul {
 /*PÁGINAS*/
 /*Home -------------------------------------------------------------------------------*/
 .main {
-  max-width: 180rem;
   margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
@@ -256,7 +290,6 @@ ul {
   color: #ededed;
   position: absolute;
   font-size: 2em;
-  top: 80%;
   right: 5%;
   display: flex;
   flex-direction: row-reverse;
@@ -312,6 +345,39 @@ ul {
     transform: translateX(-3px); }
   100% {
     transform: translateY(0); } }
+
+/*Mediaquerys*/
+/*Pantalla grande - mediana*/
+@media screen and (max-width: 1030px) {
+  .main {
+    display: flex;
+    position: relative;
+    min-height: 70vh; }
+    .main .code {
+      display: none; }
+    .main .deg1 {
+      top: 80%;
+      left: 20%; }
+    .main .deg2 {
+      top: 30%;
+      right: 10%; } }
+
+/*Pantalla chica*/
+@media screen and (max-width: 670px) {
+  .main {
+    display: flex;
+    position: relative;
+    min-height: 70vh; }
+    .main .code {
+      display: none; }
+    .main .deg1 {
+      top: 80%;
+      left: 20%; }
+    .main .deg2 {
+      top: 30%;
+      right: 10%; }
+  .flecha {
+    z-index: 1; } }
 
 /*Sobre mi -------------------------------------------------------------------------------*/
 .body-sobre-mi {
@@ -558,7 +624,6 @@ ul {
   color: #ededed;
   position: absolute;
   font-size: 2em;
-  top: 80%;
   left: 5%;
   display: flex;
   flex-direction: row;
@@ -598,14 +663,27 @@ ul {
     left: -20%;
     opacity: 1; } }
 
+/*Mediaquerys*/
+@media screen and (max-width: 1030px) {
+  .body-sobre-mi {
+    width: 100%;
+    height: 100%; }
+    .body-sobre-mi .seccion-info {
+      padding: 5rem 0; }
+      .body-sobre-mi .seccion-info .container-sobre-mi {
+        display: flex;
+        align-items: center;
+        flex-direction: column-reverse;
+        gap: 5rem;
+        justify-content: center; } }
+
 .body-servicios .servicios {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 5rem 0 0 0;
   flex-direction: column;
-  align-items: center;
-  max-width: 150rem; }
+  align-items: center; }
   .body-servicios .servicios .tarjetas {
     height: 50rem;
     max-width: 120rem;
@@ -751,10 +829,10 @@ ul {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    cursor: pointer;
     margin-top: 2rem; }
     .body-servicios .overlay #contenedor-gato .mascota2 {
       position: absolute;
+      cursor: pointer;
       width: 40px;
       height: 46px;
       background-image: url("../../assets/image/gato2.png");
@@ -796,10 +874,10 @@ ul {
   .body-contacto .mascota3 {
     position: absolute;
     bottom: -100%;
-    left: 15%;
+    right: 0;
     transform: translate(-50%, -50%);
     animation: fade-in-two 1s ease forwards;
-    animation-delay: 0.6s; }
+    animation-delay: 1s; }
     .body-contacto .mascota3 .gato {
       content: '';
       width: 20rem;
@@ -849,26 +927,41 @@ ul {
       width: 40%; }
       .body-contacto .contacto-formulario .form h3 {
         font-size: 2em;
-        color: #daff3e; }
+        color: #daff3e;
+        opacity: 0;
+        animation: fade-in 1s ease forwards;
+        animation-delay: 0.3s; }
       .body-contacto .contacto-formulario .form label {
         display: block;
         margin-block-start: 1em;
         margin-block-end: .4em;
         font-size: 1.6em;
-        color: #ededed; }
+        color: #ededed;
+        opacity: 0;
+        animation: fade-in 1s ease forwards;
+        animation-delay: 0.4s; }
       .body-contacto .contacto-formulario .form input,
       .body-contacto .contacto-formulario .form textarea {
         width: 100%;
         font-size: 1.5em;
-        padding: .5em; }
+        padding: .5em;
+        opacity: 0;
+        animation: fade-in 1s ease forwards;
+        animation-delay: 0.6s; }
       .body-contacto .contacto-formulario .form input::-webkit-input-placeholder {
         color: #4f4f4f; }
       .body-contacto .contacto-formulario .form textarea {
         margin-block-end: 2em;
-        font-family: inherit; }
+        font-family: inherit;
+        opacity: 0;
+        animation: fade-in 1s ease forwards;
+        animation-delay: 0.7s; }
       .body-contacto .contacto-formulario .form .btn-submit {
         display: flex;
-        justify-content: flex-end; }
+        justify-content: flex-end;
+        opacity: 0;
+        animation: fade-in 1s ease forwards;
+        animation-delay: 0.8s; }
         .body-contacto .contacto-formulario .form .btn-submit button {
           background-color: transparent;
           color: #ededed;
@@ -885,12 +978,64 @@ ul {
     .body-contacto .contacto-formulario #mail-to {
       opacity: 0; }
 
+/*Kayframes*/
 @keyframes fade-in-two {
   0% {
     bottom: -100%;
-    left: 22%;
+    right: 4%;
     transform: translate(-50%, -50%); }
   100% {
-    bottom: -25%;
-    left: 22%;
+    bottom: -30%;
+    right: 4%;
     transform: translate(-50%, -50%); } }
+
+/*Mediaquerys*/
+@media screen and (max-width: 1230px) {
+  .body-contacto {
+    width: 100%;
+    height: 100%;
+    position: relative; }
+    .body-contacto .mascota3 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+      .body-contacto .mascota3 .gato {
+        content: '';
+        width: 5rem;
+        height: 5rem;
+        background-color: #ededed;
+        position: relative; }
+        .body-contacto .mascota3 .gato::before, .body-contacto .mascota3 .gato::after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-color: transparent; }
+        .body-contacto .mascota3 .gato::before {
+          border-width: 3rem 2rem 0 2rem;
+          border-top-color: #ededed;
+          left: 0;
+          top: -14%;
+          transform: rotate(180deg); }
+        .body-contacto .mascota3 .gato::after {
+          border-width: 3rem 2rem 0 2rem;
+          border-top-color: #ededed;
+          right: 0;
+          top: -14%;
+          transform: rotate(180deg); }
+      .body-contacto .mascota3 .ojo,
+      .body-contacto .mascota3 .ojo2 {
+        position: absolute;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background-color: black;
+        transform: translateX(-50%); }
+      .body-contacto .mascota3 .ojo {
+        top: 25%;
+        left: 25%; }
+      .body-contacto .mascota3 .ojo2 {
+        top: 25%;
+        right: 25%; } }

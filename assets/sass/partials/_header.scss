@@ -1,85 +1,138 @@
 /*Cabecera -------------------------------------------------------------------------------*/
 .header {
-    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
-    position: relative;
-    z-index: 2;
+    padding: 2rem 5rem 2rem 5rem;
+    z-index: 4;
+    height: 10vh;
 
-    /*Logo*/
-    .logo{
+    .logo {
         cursor: pointer;
-        
-        img{
+        z-index: 4;
+
+        img {
             width: 5rem;
             height: 5rem;
         }
     }
 
-    /*Modo claro/oscuro*/
-    .mode {
-        cursor: pointer;
+    .abrir-menu {
+        font-size: 2.5em;
+        color: $blanco-claro;
+        display: none;
+    }
 
-        .circle {
-            width: 45px;
-            height: 45px;
-            background-color: $blanco-claro;
-            border-radius: 50%;
+    .nav {
+        z-index: 4;
+        .cerrar{
+            color:$blanco-claro;
+            font-size: 2.5em;
+            display:none;
+        }
+
+        .links {
+            font-size: 1.8em;
+            color: $blanco-claro;
+            transition: color 0.3s ease-in-out;
             position: relative;
+            margin: 20px;
 
-            .icons {
+            &::before {
+                content: '';
                 position: absolute;
-                font-size: 2.5em;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+                width: 0;
+                height: 100%;
+                top: 0;
+                background-color: $violeta;
+                transition: width 0.3s ease-in-out;
+                z-index: -1;
+            }
 
-                .uil-moon {
-                    display: none;
+            &::before {
+                left: 0;
+            }
+
+            &:hover {
+                color: $gris-oscuro;
+
+                &::before {
+                    width: 100%;
                 }
             }
         }
     }
 
-    /*Navbar*/
-    .nav {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 2em;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+}
 
-        /*Links*/
-        .links {
-            font-size: 1.8em;
-            position: relative;
-            color: $blanco-claro;
-            transition: 0.3s ease-in-out;
-          
-            &::before {
-              content: '';
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 0;
-              height: 100%;
-              background-color: transparent;
-              z-index: -1;
-              transition: width 0.4s ease-in-out;
-            }
-          
-            &:hover::before {
-              width: 100%;
-              background-color: $violeta;
+/*Keyframes*/
+@keyframes hover {
+    0% {
+        width: 0;
+        background-color: transparent;
+    }
+
+    100% {
+        width: 100%;
+        background-color: $violeta;
+    }
+}
+
+/* Pantalla chica */
+@media screen and (max-width: 670px) {
+    .header {
+    
+        .abrir-menu {
+            display: block;
+            cursor: pointer;
+            z-index: 4;
+        }
+
+        .nav {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-color: $gris-claro;
+            z-index: 4;
+            box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+            visibility: hidden;
+            width: 0;
+            transition: .5s ease-in-out;
+
+            .cerrar {
+                display: block;
+                padding-bottom: 10rem;
+                cursor: pointer;
+                padding: 2rem 2rem 10rem 0;
+                opacity: 0;
+                transition: .3s ease-in-out;
             }
 
-            &:hover{
-                color: $gris-oscuro;
+            .links {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding-right: 2rem;
+                opacity: 0;
+                transition: .3s ease-in-out;
+            }
+        }
+
+        .visible {
+            visibility: visible;
+            width: 250px;
+            z-index: 4;
+
+            .links{
+                opacity: 1;
+            }
+
+            .cerrar {
+                opacity: 1;
             }
         }
     }

@@ -9,7 +9,7 @@ function iniciarAnimacion() {
         ojos.forEach(ojo => {
             ojo.style.animation = 'mover-ojos 3s forwards';
         });
-    }, 2000); 
+    }, 2000);
 }
 
 setTimeout(iniciarAnimacion, 900);

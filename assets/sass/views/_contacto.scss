@@ -7,10 +7,10 @@
     .mascota3 {
         position: absolute;
         bottom: -100%;
-        left: 15%;
+        right:0;
         transform: translate(-50%, -50%);
         animation: fade-in-two 1s ease forwards;
-        animation-delay: 0.6s;
+        animation-delay: 1s;
 
         .gato {
             content: '';
@@ -61,7 +61,7 @@
             left: 25%;
         }
 
-        .ojo2{
+        .ojo2 {
             top: 25%;
             right: 25%;
         }
@@ -80,6 +80,9 @@
             h3 {
                 font-size: 2em;
                 color: $verde;
+                opacity: 0;
+                animation: fade-in 1s ease forwards;
+                animation-delay: 0.3s;
             }
 
             label {
@@ -88,6 +91,9 @@
                 margin-block-end: .4em;
                 font-size: 1.6em;
                 color: $blanco-claro;
+                opacity: 0;
+                animation: fade-in 1s ease forwards;
+                animation-delay: 0.4s;
             }
 
             input,
@@ -95,6 +101,9 @@
                 width: 100%;
                 font-size: 1.5em;
                 padding: .5em;
+                opacity: 0;
+                animation: fade-in 1s ease forwards;
+                animation-delay: 0.6s;
             }
 
             input::-webkit-input-placeholder {
@@ -104,11 +113,17 @@
             textarea {
                 margin-block-end: 2em;
                 font-family: inherit;
+                opacity: 0;
+                animation: fade-in 1s ease forwards;
+                animation-delay: 0.7s;
             }
 
             .btn-submit {
                 display: flex;
                 justify-content: flex-end;
+                opacity: 0;
+                animation: fade-in 1s ease forwards;
+                animation-delay: 0.8s;
 
                 button {
                     background-color: transparent;
@@ -135,16 +150,88 @@
     }
 }
 
+/*Kayframes*/
 @keyframes fade-in-two {
     0% {
         bottom: -100%;
-        left: 22%;
+        right: 4%;
         transform: translate(-50%, -50%);
     }
 
     100% {
-        bottom: -25%;
-        left: 22%;
+        bottom: -30%;
+        right: 4%;
         transform: translate(-50%, -50%);
+    }
+}
+
+/*Mediaquerys*/
+@media screen and (max-width:1230px) {
+
+    .body-contacto {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        .mascota3 {
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+      
+            .gato {
+                content: '';
+                width: 5rem;
+                height: 5rem;
+                background-color: $blanco-claro;
+                position: relative;
+    
+                &::before,
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-color: transparent;
+                }
+    
+                &::before {
+                    border-width: 3rem 2rem 0 2rem;
+                    border-top-color: $blanco-claro;
+                    left: 0;
+                    top: -14%;
+                    transform: rotate(180deg);
+                }
+    
+                &::after {
+                    border-width: 3rem 2rem 0 2rem;
+                    border-top-color: $blanco-claro;
+                    right: 0;
+                    top: -14%;
+                    transform: rotate(180deg);
+                }
+            }
+    
+            .ojo,
+            .ojo2 {
+                position: absolute;
+                width: 1rem;
+                height: 1rem;
+                border-radius: 50%;
+                background-color: black;
+                transform: translateX(-50%);
+            }
+    
+            .ojo {
+                top: 25%;
+                left: 25%;
+            }
+    
+            .ojo2 {
+                top: 25%;
+                right: 25%;
+            }
+        }
     }
 }

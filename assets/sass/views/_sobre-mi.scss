@@ -304,7 +304,6 @@
     color: $blanco-claro;
     position: absolute;
     font-size: 2em;
-    top: 80%;
     left: 5%;
     display: flex;
     flex-direction: row;
@@ -359,15 +358,24 @@
     }
 }
 
-// /*Raya*/
-// @keyframes move {
-//     0% {
-//         opacity: 0;
-//         width: 0;
-//     }
+/*Mediaquerys*/
+@media screen and (max-width:1030px) {
 
-//     100% {
-//         opacity: 1;
-//         width: 7rem;
-//     }
-// }
+.body-sobre-mi {
+    width: 100%;
+    height: 100%;
+
+    .seccion-info {
+        padding: 5rem 0;
+
+        .container-sobre-mi {
+            display: flex;
+            align-items: center;
+            flex-direction: column-reverse;
+            gap: 5rem;
+            justify-content: center;
+        }
+    }
+}
+
+}
